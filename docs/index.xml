@@ -12,8 +12,50 @@
 <generator>quarto-1.9.38</generator>
 <lastBuildDate>Tue, 01 Sep 2026 23:00:00 GMT</lastBuildDate>
 <item>
+  <title>The Millburn Road Junction</title>
+  <link>https://themodeshift.scot/posts/2026-09-03-millburn-background/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>To open this project I’m going to have a look at some infrastructure that is close to home - the segregated bike lane on Millburn Road in Inverness.</p>
+<p>During the height of the COVID-19 pandemic, cities across Scotland installed lots of temporary bike lanes as people’s travel habits changes in response to the virus. One such lane was built along a stretch of Millburn Road<sup>1</sup> protecting cyclists on a particularly busy route into the city. The road went from looking like this in 2017:</p>
+<iframe src="https://www.google.com/maps/embed?pb=!4v1788464524212!6m8!1m7!1sCDsIXwQnWN7DlLjHSoZ9kg!2m2!1d57.48009006687476!2d-4.218674253861359!3f217.12904765440703!4f-12.050525166695664!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+</iframe>
+<p>To this in 2025:</p>
+<iframe src="https://www.google.com/maps/embed?pb=!4v1788464792219!6m8!1m7!1ss1U3zWeD_4YfZHfT9X6_NQ!2m2!1d57.48006149079656!2d-4.218620963175761!3f217.12904765440703!4f-12.050525166695664!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+</iframe>
+<p>So you can see it’s gone from a fairly inhospitable place to cycle, to one that’s fairly attractive. Then in a surprising move earlier this year <a href="https://www.bbc.co.uk/news/articles/cp9l34jn1e2o">Highland Council removed a section at the westernmost junction</a>.</p>
+<div id="fig-lane-comparison" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A comparison image of the bike lane before and after the 2026 shortening">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lane-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://themodeshift.scot/posts/2026-09-03-millburn-background/bbc_lane_comparison.png" class="img-fluid figure-img" alt="A comparison image of the bike lane before and after the 2026 shortening">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lane-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The Millburn Rd bike lane, before and after the 2026 shortening. Photo: Highland Cycle Campaign
+</figcaption>
+</figure>
+</div>
+<p>Over the next few weeks I’m going to explore some of the data around this junction to investigate how useful it’s been to the city. I want to see what we can learn from the infrastructure to help better inform any plans for what comes next.</p>
+
+
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>It was shortened after a couple of years, more detail on that in a later post.↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>infrastructure</category>
+  <category>case-study</category>
+  <guid>https://themodeshift.scot/posts/2026-09-03-millburn-background/</guid>
+  <pubDate>Tue, 01 Sep 2026 23:00:00 GMT</pubDate>
+</item>
+<item>
   <title>Hello, Mode Shift</title>
-  <link>https://themodeshift.scot/posts/2026-09-02-hello-world.html</link>
+  <link>https://themodeshift.scot/posts/2026-09-02-hello-world/</link>
   <description><![CDATA[ 
 
 
@@ -25,7 +67,7 @@
 
  ]]></description>
   <category>meta</category>
-  <guid>https://themodeshift.scot/posts/2026-09-02-hello-world.html</guid>
+  <guid>https://themodeshift.scot/posts/2026-09-02-hello-world/</guid>
   <pubDate>Tue, 01 Sep 2026 23:00:00 GMT</pubDate>
 </item>
 </channel>
