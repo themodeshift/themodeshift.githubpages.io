@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This project aims to provide a look at the data behind active travel decisions in Scotland.\nIn 2020 The Scottish Government set a target to reduce car kilometres by 20%, which in part has shaped the active travel framework guiding transport policy. That target is currently not on track, and this blog looks at the numbers behind where implementation is working — and where it needs more support."
+  },
+  {
+    "objectID": "about.html#what-is-the-mode-shift",
+    "href": "about.html#what-is-the-mode-shift",
+    "title": "About",
+    "section": "",
+    "text": "This project aims to provide a look at the data behind active travel decisions in Scotland.\nIn 2020 The Scottish Government set a target to reduce car kilometres by 20%, which in part has shaped the active travel framework guiding transport policy. That target is currently not on track, and this blog looks at the numbers behind where implementation is working — and where it needs more support."
+  },
+  {
+    "objectID": "about.html#who-runs-the-mode-shift",
+    "href": "about.html#who-runs-the-mode-shift",
+    "title": "About",
+    "section": "Who runs The Mode Shift?",
+    "text": "Who runs The Mode Shift?\nI’m Steve Crawford, based in Inverness. I’m a strong believer in the transformative power of bikes on people and communities. I have equal love for cycling as a sport and cycling as a mode of transport.\nOne of the most constant thoughts in my head is ‘what does that number mean?’, so I recently put my money where my mouth is and completed an MSc in Data Analytics at University of Highlands and Islands. This project is a way for me to merge those two passions while hopefully helping improve Active Travel decision making in Scotland."
+  },
+  {
+    "objectID": "about.html#methodology",
+    "href": "about.html#methodology",
+    "title": "About",
+    "section": "Methodology",
+    "text": "Methodology\nWherever possible the analysis in this blog is carried out using open source tools. Most code is written in R using the Tidyverse set of packages and datasets used are publicly available."
+  },
+  {
+    "objectID": "about.html#get-in-touch",
+    "href": "about.html#get-in-touch",
+    "title": "About",
+    "section": "Get in touch",
+    "text": "Get in touch\nemail: steve@themodeshift.scot"
+  },
+  {
+    "objectID": "posts/2026-09-02-hello-world.html",
+    "href": "posts/2026-09-02-hello-world.html",
+    "title": "Hello, Mode Shift",
+    "section": "",
+    "text": "First post — more to come as the Scottish active travel analysis develops."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "The Mode Shift",
+    "section": "",
+    "text": "Data-driven analysis of active travel in Scotland — cycling volumes, mode share, and the infrastructure behind them.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHello, Mode Shift\n\n\n\nmeta\n\n\n\n\n\n\n\n\n\nSep 2, 2026\n\n\n\n\n\nNo matching items"
+  }
+]

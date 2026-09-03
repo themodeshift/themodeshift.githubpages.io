@@ -1,0 +1,24 @@
+---
+title: "About"
+page-layout: article
+---
+
+## What is The Mode Shift?
+
+This project aims to provide a look at the data behind active travel decisions in Scotland.
+
+In 2020 The Scottish Government [set a target to reduce car kilometres by 20%](https://www.gov.scot/publications/securing-green-recovery-path-net-zero-update-climate-change-plan-20182032/), which in part has shaped the [active travel framework](https://www.transport.gov.scot/publication/active-travel-framework-1/key-policy-approaches-to-improving-the-uptake-of-walking-and-cycling-in-scotland-for-travel/) guiding transport policy. That target is currently [not on track](https://spice-spotlight.scot/2025/08/26/driving-down-driving-3/), and this blog looks at the numbers behind where implementation is working — and where it needs more support.
+
+## Who runs The Mode Shift?
+
+I'm Steve Crawford, based in Inverness. I'm a strong believer in the transformative power of bikes on people and communities. I have equal love for cycling as a sport and cycling as a mode of transport.
+
+One of the most constant thoughts in my head is 'what does that number mean?', so I recently put my money where my mouth is and completed an MSc in Data Analytics at University of Highlands and Islands. This project is a way for me to merge those two passions while hopefully helping improve Active Travel decision making in Scotland.
+
+## Methodology
+
+Wherever possible the analysis in this blog is carried out using open source tools. Most code is written in R using the Tidyverse set of packages and datasets used are publicly available.
+
+## Get in touch
+
+email: steve@themodeshift.scot

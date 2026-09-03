@@ -1,0 +1,17 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "The Mode Shift"
+  site-url: "https://themodeshift.scot"
+  navbar:
+    background: primary
+    right:
+      - href: about.qmd
+        text: About
+
+format:
+  html:
+    theme: theme.scss
+    css: styles.css

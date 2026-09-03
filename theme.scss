@@ -1,0 +1,35 @@
+/*-- scss:defaults --*/
+$primary: #0065bd;       // Saltire blue
+$body-bg: #ffffff;
+$body-color: #1a1a1a;
+$link-color: #0065bd;
+$navbar-bg: #0065bd;
+$navbar-fg: #ffffff;
+$light: #f0f6fb;         // pale blue-white for section backgrounds/cards
+$font-family-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+/*-- scss:rules --*/
+.navbar-title {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.listing-category {
+  border-color: $primary !important;
+  color: $primary !important;
+  background-color: $light;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba($primary, 0.3);
+}
+a:hover {
+  border-bottom-color: $primary;
+}
+
+.quarto-post {
+  background-color: $light;
+  border-radius: 4px;
+  padding: 1rem;
+}
