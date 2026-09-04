@@ -42,16 +42,23 @@
     "text": "First post — more to come as the Scottish active travel analysis develops."
   },
   {
+    "objectID": "posts/2026-09-04-inverness-data/index.html",
+    "href": "posts/2026-09-04-inverness-data/index.html",
+    "title": "Millburn Road - The Data",
+    "section": "",
+    "text": "To understand more about the bike lane on Millburn Road, I wanted to look at the cycling traffic levels right across the city of Inverness. The excellent news is that Cycling Scotland have an Open Data portal that tracks lots of places across Scotland. The less great news is that the data starts in 2021, so there’s no simple before/after picture to see the effect of the installation of new bike lanes during the COVID-19 pandemic. There’s still a lot to learn from what is there though!\nMillburn Road has two traffic counters, one each for the Eastward and Westward sections of the road. The point where the counters appear on the map is almost exactly where the section of bike lane has been removed making it a good place to measure bike traffic:\n\n\n\nImage taken from Cycling Scotland Open Data portal (usmart.io)\n\n\nBy grabbing the data from both the Eastward and Westward counters it’s pretty easy to see which side of the road has a bike lane:\n\n\n\n\n\n\n\n\nFigure 1: Average daily cycle counts on Millburn Road by direction, 2022–2026\n\n\n\n\nAfter a look to see if the data is what we want (it is) we can then download the full dataset for the Highland Council area. This gives daily aggregated counts at each site of cyclists, pedestrians, motorcycles, cars, buses, and goods vehicles from March 2021 to June 2026.\nIn the next post, we’ll look at how the cycle counts compare to the other city centre sites:\n\n\n\nImage taken from Cycling Scotland Open Data portal (usmart.io)"
+  },
+  {
     "objectID": "posts/2026-09-03-millburn-background/index.html",
     "href": "posts/2026-09-03-millburn-background/index.html",
-    "title": "The Millburn Road Junction",
+    "title": "Millburn Road, Inverness - The Background",
     "section": "",
     "text": "To open this project I’m going to have a look at some infrastructure that is close to home - the segregated bike lane on Millburn Road in Inverness.\nDuring the height of the COVID-19 pandemic, cities across Scotland installed lots of temporary bike lanes as people’s travel habits changes in response to the virus. One such lane was built along a stretch of Millburn Road1 protecting cyclists on a particularly busy route into the city. The road went from looking like this in 2017:\nTo this in 2025:\nSo you can see it’s gone from a fairly inhospitable place to cycle, to one that’s fairly attractive. Then in a surprising move earlier this year Highland Council removed a section at the westernmost junction.\nOver the next few weeks I’m going to explore some of the data around this junction to investigate how useful it’s been to the city. I want to see what we can learn from the infrastructure to help better inform any plans for what comes next."
   },
   {
     "objectID": "posts/2026-09-03-millburn-background/index.html#footnotes",
     "href": "posts/2026-09-03-millburn-background/index.html#footnotes",
-    "title": "The Millburn Road Junction",
+    "title": "Millburn Road, Inverness - The Background",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nIt was shortened after a couple of years, more detail on that in a later post.↩︎"
   },
@@ -60,6 +67,6 @@
     "href": "index.html",
     "title": "The Mode Shift",
     "section": "",
-    "text": "Data-driven analysis of active travel in Scotland — cycling volumes, mode share, and the infrastructure behind them.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Millburn Road Junction\n\n\n\ninfrastructure\n\ncase-study\n\n\n\n\n\n\n\n\n\nSep 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nHello, Mode Shift\n\n\n\nmeta\n\n\n\n\n\n\n\n\n\nSep 2, 2026\n\n\n\n\n\nNo matching items"
+    "text": "Data-driven analysis of active travel in Scotland — cycling volumes, mode share, and the infrastructure behind them.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMillburn Road - The Data\n\n\n\ninfrastructure\n\ncase-study\n\ndata\n\n\n\n\n\n\n\n\n\nSep 4, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMillburn Road, Inverness - The Background\n\n\n\ninfrastructure\n\ncase-study\n\n\n\n\n\n\n\n\n\nSep 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nHello, Mode Shift\n\n\n\nmeta\n\n\n\n\n\n\n\n\n\nSep 2, 2026\n\n\n\n\n\nNo matching items"
   }
 ]
