@@ -22,3 +22,5 @@ Wherever possible the analysis in this blog is carried out using open source too
 ## Get in touch
 
 email: steve@themodeshift.scot
+
+bluesky: [{{< bi bluesky >}} @themodeshift.scotl](https://bsky.app/profile/themodeshift.scot)
