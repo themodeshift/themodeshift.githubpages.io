@@ -32,7 +32,7 @@
     "href": "about.html#get-in-touch",
     "title": "About",
     "section": "Get in touch",
-    "text": "Get in touch\nemail: steve@themodeshift.scot\nbluesky: {{&lt; bi bluesky &gt;}} @themodeshift.scotl"
+    "text": "Get in touch\n{{&lt; bi envelope &gt;}} email: steve@themodeshift.scot\n{{&lt; bi bluesky &gt;}} bluesky: @themodeshift.scot"
   },
   {
     "objectID": "posts/2026-09-02-hello-world/index.html",
