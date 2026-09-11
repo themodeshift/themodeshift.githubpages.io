@@ -1,0 +1,318 @@
+---
+title: "Inverness Courier - Bad 20mph Stats"
+date: 2026-09-11
+categories: [infrastructure, case-study, data]
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(plotly)
+# shared plotly styling to match the site's light blue/white theme
+plotly_theme <- function(p, y_title = NULL) {
+  p %>%
+    layout(
+      paper_bgcolor = "rgba(0,0,0,0)",
+      plot_bgcolor  = "rgba(0,0,0,0)",
+      font  = list(color = "#1a1a1a", family = "Helvetica, Arial, sans-serif", size = 12),
+      xaxis = list(gridcolor = "#e0e6ea", zeroline = FALSE, title = ""),
+      yaxis = list(gridcolor = "#e0e6ea", zeroline = FALSE, title = y_title),
+      legend = list(orientation = "h", y = -0.2),
+      margin = list(l = 60, r = 20, t = 10, b = 40)
+    ) %>%
+    config(displaylogo = FALSE)
+}
+
+millburn_orange <- "#eb6834"
+accent_blue     <- "#2a78d6"
+accent_green    <- "#1baf7a"
+muted_gray      <- "#6b7278"
+```
+
+[This article in the Inverness Courier](https://www.inverness-courier.co.uk/news/20mph-speed-limit-branded-ploy-against-drivers-as-collisio-444540/) was brought to my attention and it immediately brought up some statistical red flags. Road safety is an important factor in active travel and I feel it's important to challenge bad stats when we see them. I've written directly to the Courier as well as the MSP quoted in the article, Tim Eagle, with some of my objections but I'd like to go into more detail here.
+
+The article suggests that the Scottish Governments expansion of 20mph speed limits on its road networks is not successful because of a slight rise in road traffic collisions in 20mph zones in 2025. Here I'm going to list my red flags and explain in detail why this article should not be taken seriously.
+
+### 🚩 No link to the data source.
+
+The article states:
+
+> New figures released by the Scottish Government show 570 collisions on 20mph roads across Scotland ended in injury last year.
+
+Given the lack of a link in the article to the source of data, one would hope that typing "Scottish Government road collision statistics" into your favourite search engine would get you on the way. Unfortunately, what you'll find is [Transport Scotland's Road Casualty Statistics](https://www.transport.gov.scot/publication/key-reported-road-casualties-scotland-2025/) which are great, but as far as I can tell don't break down collisions by speed limit.
+
+Instead, the closest match I can find to data quoted in the article is published by the UK Government's Department for Transport under the [stats19 reporting system](https://www.gov.uk/government/statistical-data-sets/road-safety-open-data). It's a great example of government open data, being comprehensive, well documented and very clean. Hats off to the nerds who keep this data in such good shape, and an extra special nod of thanks for writing and maintaining an R package to go along with it.
+
+Wherever this data comes from it isn't sufficiently linked or sourced - does this invalidate the article? No, but it starts the article on the wrong foot. To me it says 'we're not confident enough in these numbers to let you see them for yourself' and 'we don't care enough about this to get the details right'.
+
+### 🚩 There's no denominator.
+
+Ok, fine, technically there is a denominator as we're given the number of collisions per year but in this context that's not meaningful enough. Here's an example of the text of the article:
+
+> Last year, 254 crashes on 40mph routes resulted in a driver of [sic] passenger being injured. This was compared to 165 injury collisions on 50mph routes and 268 on 70mph dual carriageways. The figures highlight a five year high for collisions on 20mph routes. A total of 515 were recorded back in 2021, followed by a reduction to 488 two years later.[^collision-discrepancy]
+
+[^collision-discrepancy]: My own pull of the same STATS19 data gives 522 collisions in 2021 and 482 in 2023, not 515 and 488 as quoted here. STATS19 records are periodically revised as late reports and corrections come in, so this is most likely a difference in when each of us pulled the data, rather than an error on either side.
+
+While these are real numbers from a real dataset, they don't contain enough information to draw any conclusions about the effect of 20mph zones. The most glaring issue I have with this is that **if there are more roads with 20mph than last year then more collisions will happen on those roads.** Saying that the number of collisions is at a five year high doesn't tell you much if you don't take into account the underlying conditions behind that number.
+
+A more informative figure here could be "collisions / kilometer of road type" or even better "collisions / vehicle kilometer on that road type". The former of these would account for changes in the make-up of the road network while the latter would also account for changes in vehicle volumes. It turns out that the data to make these comparisons is trickier to get hold of (more on that later) but that doesn't excuse choosing meaningless numbers to make a point.
+
+### 🚩 "Only 20mph can beat 30mph here"
+
+The next statistical sin feels a lot like the [dodgy graphs on the back of election leaflets](https://fullfact.org/politics/election-leaflets-2026/). Here's Tim Eagle MSP quoted in the article:
+
+> 20mph zones account for the third highest number of vehicle crashes that result in an injury, with more collisions than in 40mph, 50mph and 70mph areas
+
+If we take the figures quoted earlier and graph them you can certainly see Mr Eagle's point:
+
+```{r}
+#| label: fig-badspeedlimits
+#| fig-cap: "2025 injury collisions on 20mph, 40mph, 50mph and 70mph roads in Scotland"
+#| fig-alt: "Bar chart showing injury collision counts for 20mph, 40mph, 50mph and 70mph roads only, with the 20mph bar highlighted in orange"
+#| echo: false
+
+bad_data <- data.frame(
+  speed_limit = factor(c("20mph", "40mph", "50mph", "70mph"),
+                        levels = c("20mph", "40mph", "50mph", "70mph")),
+  collisions = c(570, 254, 165, 268)
+)
+
+plot_ly(
+  bad_data,
+  x = ~speed_limit,
+  y = ~collisions,
+  type = "bar",
+  marker = list(color = c(millburn_orange, accent_blue, accent_blue, accent_blue)),
+  text = ~collisions,
+  textposition = "outside",
+  showlegend = FALSE
+) %>%
+  plotly_theme(y_title = "Number of collisions")
+  
+```
+
+You may have noticed that the values for 30mph roads and 60mph roads aren't referenced in the articles. Lets pull them out and add them to the graph:
+
+```{r}
+
+#| label: fig-allspeedlimits
+#| fig-cap: "2025 injury collisions in Scotland by speed limit"
+#| fig-alt: "Bar chart showing injury collision counts for all six speed limits in Scotland in 2025: 20mph, 30mph, 40mph, 50mph, 60mph and 70mph. 30mph has the highest count at 1,729, followed by 60mph at 1,118. 20mph, at 570, is third highest, well below both."
+#| echo: false
+
+all_speeds <- data.frame(
+  speed_limit = factor(c("20mph", "30mph", "40mph", "50mph", "60mph", "70mph"),
+                        levels = c("20mph", "30mph", "40mph", "50mph", "60mph", "70mph")),
+  collisions = c(570, 1729, 254, 165, 1118, 268)
+)
+
+plot_ly(
+  all_speeds,
+  x = ~speed_limit,
+  y = ~collisions,
+  type = "bar",
+  marker = list(color = accent_blue),
+  text = ~collisions,
+  textposition = "outside",
+  showlegend = FALSE
+) %>%
+  plotly_theme(y_title = "Number of collisions")
+
+```
+
+Oh.
+
+So here's the thing - it's OK to exclude some data from your comparisons if you have justification for doing so. In fact I'm going to do just that later in the blog. No justification is given in the article for not reporting the numbers for 30mph and 60mph, and I can't even charitably think of one that anyone might give in good faith. You could argue, in fact that given most new 20mph limits are replacing existent 30mph limits that the comparison between those two is the most important one you could make.
+
+If we accept the logic of the article that the collisions number is a useful proxy for safety (we shouldn't), then turning 30mph zones into 20mph zones would be an obvious step to improve safety. The whole picture is completely different with the inclusion of that data. Omitting to mention the counts for 30mph and 60mph without justification is at best misleading and at worst wilfully dishonest.
+
+### 🚩The Secret to Stats is the Same as the Secret to Comedy
+
+...Timing.
+
+Lets look at one of the claims in the headline:
+
+> 
+20mph speed limit branded ‘ploy against drivers’ as collisions reach five year high
+
+Of course, it is factually correct that collisions in 20mph zones has reached a 5 year high. Here's a graph to prove it:
+
+```{r}
+#| label: fig-20trend
+#| fig-cap: "20mph road injury collisions in Scotland, 2021–2025"
+#| fig-alt: "Bar chart showing injury collisions on 20mph roads in Scotland by year: 522 in 2021, 526 in 2022, 482 in 2023, 526 in 2024, and 570 in 2025."
+#| echo: false
+
+trend_20 <- data.frame(
+  collision_year = 2021:2025,
+  collisions = c(522, 526, 482, 526, 570)
+)
+
+plot_ly(
+  trend_20,
+  x = ~collision_year,
+  y = ~collisions,
+  type = "bar",
+  marker = list(color = millburn_orange),
+  text = ~collisions,
+  textposition = "outside",
+  showlegend = FALSE
+) %>%
+  plotly_theme(y_title = "20mph injury collisions") %>%
+  layout(xaxis = list(gridcolor = "#e0e6ea", zeroline = FALSE, title = "",
+                       tickmode = "array", tickvals = 2021:2025))
+
+```
+
+It does indeed show numbers at a 5 year high, but does that support the claim that 20mph zones aren't improving safety? If you want to show that on a time series graph you can annotate the graph to show where in time the intervention you're talking about takes place, [like in this classic from xkcd](https://xkcd.com/1356). Let's add in the deadline for the roll-out of 20mph zones in Scotland, March 2026:
+
+```{r}
+#| label: fig-20trend-deadline
+#| fig-cap: "20mph road injury collisions in Scotland, 2021–2025, against the national rollout deadline"
+#| fig-alt: "The same bar chart as above, with a dashed vertical line marking March 2026, the deadline for completing the national 20mph rollout, shown to the right of all five years of data"
+#| echo: false
+
+deadline_red <- "#d62828"
+deadline_x <- 2026.2   # March 2026, expressed as a fractional year
+
+plot_ly(
+  trend_20,
+  x = ~collision_year,
+  y = ~collisions,
+  type = "bar",
+  marker = list(color = millburn_orange),
+  text = ~collisions,
+  textposition = "outside",
+  showlegend = FALSE
+) %>%
+  plotly_theme(y_title = "20mph injury collisions") %>%
+  layout(
+    xaxis = list(
+      gridcolor = "#e0e6ea", zeroline = FALSE, title = "",
+      tickmode = "array", tickvals = 2021:2025,
+      range = c(2020.4, 2026.8)   # extend past the deadline so it's visible
+    ),
+    shapes = list(
+      list(
+        type = "line",
+        x0 = deadline_x, x1 = deadline_x,
+        y0 = 0, y1 = 600,
+        line = list(color = deadline_red, dash = "dash", width = 1.5)
+      )
+    ),
+    annotations = list(
+      list(
+        x = deadline_x, y = 600,
+        text = "National rollout\ndeadline: March 2026",
+        showarrow = FALSE,
+        xanchor = "left",
+        font = list(size = 11, color = deadline_red)
+      )
+    )
+  )
+```
+
+The article is using data to infer the effects of a policy that is taken before that policy has been enacted. It's a bit like calling your GP to complain that your antibiotics aren't working before you've started taking them. The Scottish Greens, who championed the policy in the Scottish Parliament surveyed all local authorities [and found that only 5 had completed the roll-out in June 2026](https://greens.scot/news/councils-must-step-up-20mph-promise). To be clear you cannot blame anything found in this data on the 20mph roll-out because, as far as the data is concerned it hasn't happened yet.
+
+## A Better Use of the Data
+
+I don't want to just sit here and criticise the article, I want to see if there's something we can genuinely learn from the data if we treat it with more respect. I'll add links to my primary data throughout.
+
+### ✅ A Better Denominator
+
+As I mention above, a more meaningful statistic is possible here if we put the collisions in the correct context. I've tried to find a breakdown of the length of each road in Scotland by speed limit but the closest thing I can find is in [Transport Scotland's Scottish Transport Statistics 2025 Report](https://www.transport.gov.scot/publication/scottish-transport-statistics-2025). Near the bottom of that page is the link to the Excel sheets for Chapter 4 - Road Network, where the roads are broken down into 'Roads up to 40mph' and 'Roads over 40mph'. This isn't granular enough for looking at specific speed limits, so I've sent an FOI to Transport Scotland to see if they hold the data at individual speed limit level.
+
+The same report details traffic volumes in Chapter 5 - Road Traffic. The published dataset splits the traffic volume estimates (given in million vehicle kilometers) by road type rather than speed limit. The distinction of minor/major roads doesn't map perfectly with speed limits - some minor roads will have high speed limits and vice versa - but the vast majority of roads affected by the 20mph roll-out will be minor roads. Here, I'm having to make a judgement call about the compromise I have to make in the data, but crucially I've also stated my defense for my choice. I'll proceed with this with the caveat that it contains volumes of traffic on roads that we're not interested in. Here's the trend in that measure from the data:
+
+```{r}
+#| label: fig-minorroadtraffic
+#| fig-cap: "Traffic volume on minor roads (B, C and unclassified) in Scotland, 2021–2024"
+#| fig-alt: "Bar chart showing traffic volume in million vehicle-kilometres on minor roads in Scotland by year: 15,908 in 2021, 17,009 in 2022, 17,221 in 2023, and 17,633 in 2024."
+#| echo: false
+
+minor_traffic <- data.frame(
+  year = 2021:2024,
+  vehicle_km_million = c(15908, 17009, 17221, 17633)
+)
+
+plot_ly(
+  minor_traffic,
+  x = ~year,
+  y = ~vehicle_km_million,
+  type = "bar",
+  marker = list(color = accent_blue),
+  text = ~format(vehicle_km_million, big.mark = ","),
+  textposition = "outside",
+  showlegend = FALSE
+) %>%
+  plotly_theme(y_title = "Traffic volume (million vehicle-km)") %>%
+  layout(xaxis = list(gridcolor = "#e0e6ea", zeroline = FALSE, title = "",
+                       tickmode = "array", tickvals = 2021:2024))
+
+
+```
+
+### ✅ A Defensible Subset of Data
+
+Time to focus on which data will tell us something useful. Given the focus of the question is whether the 20mph policy improves road safety, I think it's important to consider the desired outcome of the policy. [The Scottish Goverment's Implementation for 20mph limits](https://www.transport.gov.scot/media/3yxfd5tp/the-implementation-guide-for-20-mph-speed-limits-in-scotland.pdf) highlights the importance of reducing the severity of collisions:
+
+> The speed of a vehicle directly influences the risk of a collision as well as the
+severity of injuries sustained, and the likelihood of death resulting from that collision.
+
+With that in mind, choosing to focus on collisions in which one or more casualty is killed or seriously injured (so-called KSI collisions) allows both the frequency and severity of collisions to be covered in the analysis. Again, this is a choice that I have made to exclude some data from my analysis but I've made clear my reason for doing so. Here's that trend, not corrected for traffic volume:
+
+```{r}
+#| label: fig-minorksicount
+#| fig-cap: "KSI collisions on minor roads (B, C and unclassified) in Scotland, 2021–2024"
+#| fig-alt: "Bar chart showing killed or seriously injured collisions on minor roads in Scotland by year: 744 in 2021, 793 in 2022, 878 in 2023, and 871 in 2024."
+#| echo: false
+
+ksi_minor <- data.frame(
+  collision_year = 2021:2024,
+  ksi_collisions = c(744, 793, 878, 871),
+  ksi_per_billion_vkm = c(46.8, 46.6, 51.0, 49.4)
+)
+
+plot_ly(
+  ksi_minor, x = ~collision_year, y = ~ksi_collisions,
+  type = "bar", marker = list(color = muted_gray),
+  text = ~ksi_collisions, textposition = "outside", showlegend = FALSE
+) %>%
+  plotly_theme(y_title = "KSI collisions") %>%
+  layout(xaxis = list(gridcolor = "#e0e6ea", zeroline = FALSE, title = "",
+                       tickmode = "array", tickvals = 2021:2024))
+
+```
+
+### ✅ A Realistic Conclusion
+
+You may have noticed that I don't have any data for 2025 above - that's because I don't have the traffic volume data for 2025 yet. This limits the scope of the conclusions we can make but it doesn't mean we can't learn something. Here's the KSI collision rate corrected for traffic volume:
+
+```{r}
+
+#| label: fig-minorksirate
+#| fig-cap: "KSI collisions per billion vehicle-km on minor roads in Scotland, 2021–2024"
+#| fig-alt: "Bar chart showing killed or seriously injured collisions on minor roads in Scotland, adjusted for traffic volume, per billion vehicle-kilometres, by year: 46.8 in 2021, 46.6 in 2022, 51.0 in 2023, and 49.4 in 2024."
+#| echo: false
+
+plot_ly(
+  ksi_minor, x = ~collision_year, y = ~ksi_per_billion_vkm,
+  type = "bar", marker = list(color = millburn_orange),
+  text = ~ksi_per_billion_vkm, textposition = "outside", showlegend = FALSE
+) %>%
+  plotly_theme(y_title = "KSI per billion vehicle-km") %>%
+  layout(xaxis = list(gridcolor = "#e0e6ea", zeroline = FALSE, title = "",
+                       tickmode = "array", tickvals = 2021:2024))
+```
+
+There's no clear trend on display here, but we can see that 2023 and 2024 have higher traffic-adjusted rates of KSI collisions than the preceding years. There's nothing in this data that point to a cause for that rise but it's there and it's real. Here's my attempt at a statistically defensible headline from that data:
+
+::: {.callout-important appearance="minimal"}
+
+Serious crash rate on minor roads averaged 7.5% higher in 2023–24 than 2021–22.
+
+:::
+
+And that's it. There's no evidence that 20mph zones may have caused it, no evidence of a war on motorists. Just and indication of something that could be a problem - the kind of problem that needs an intervention to fix it.

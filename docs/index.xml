@@ -10,7 +10,402 @@
 <atom:link href="https://themodeshift.scot/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Thu, 03 Sep 2026 23:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 10 Sep 2026 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>Inverness Courier - Bad 20mph Stats</title>
+  <link>https://themodeshift.scot/posts/2026-09-10-courier-20mph-article/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><a href="https://www.inverness-courier.co.uk/news/20mph-speed-limit-branded-ploy-against-drivers-as-collisio-444540/">This article in the Inverness Courier</a> was brought to my attention and it immediately brought up some statistical red flags. Road safety is an important factor in active travel and I feel it’s important to challenge bad stats when we see them. I’ve written directly to the Courier as well as the MSP quoted in the article, Tim Eagle, with some of my objections but I’d like to go into more detail here.</p>
+<p>The article suggests that the Scottish Governments expansion of 20mph speed limits on its road networks is not successful because of a slight rise in road traffic collisions in 20mph zones in 2025. Here I’m going to list my red flags and explain in detail why this article should not be taken seriously.</p>
+<section id="no-link-to-the-data-source." class="level3">
+<h3 class="anchored" data-anchor-id="no-link-to-the-data-source.">🚩 No link to the data source.</h3>
+<p>The article states:</p>
+<blockquote class="blockquote">
+<p>New figures released by the Scottish Government show 570 collisions on 20mph roads across Scotland ended in injury last year.</p>
+</blockquote>
+<p>Given the lack of a link in the article to the source of data, one would hope that typing “Scottish Government road collision statistics” into your favourite search engine would get you on the way. Unfortunately, what you’ll find is <a href="https://www.transport.gov.scot/publication/key-reported-road-casualties-scotland-2025/">Transport Scotland’s Road Casualty Statistics</a> which are great, but as far as I can tell don’t break down collisions by speed limit.</p>
+<p>Instead, the closest match I can find to data quoted in the article is published by the UK Government’s Department for Transport under the <a href="https://www.gov.uk/government/statistical-data-sets/road-safety-open-data">stats19 reporting system</a>. It’s a great example of government open data, being comprehensive, well documented and very clean. Hats off to the nerds who keep this data in such good shape, and an extra special nod of thanks for writing and maintaining an R package to go along with it.</p>
+<p>Wherever this data comes from it isn’t sufficiently linked or sourced - does this invalidate the article? No, but it starts the article on the wrong foot. To me it says ‘we’re not confident enough in these numbers to let you see them for yourself’ and ‘we don’t care enough about this to get the details right’.</p>
+</section>
+<section id="theres-no-denominator." class="level3">
+<h3 class="anchored" data-anchor-id="theres-no-denominator.">🚩 There’s no denominator.</h3>
+<p>Ok, fine, technically there is a denominator as we’re given the number of collisions per year but in this context that’s not meaningful enough. Here’s an example of the text of the article:</p>
+<blockquote class="blockquote">
+<p>Last year, 254 crashes on 40mph routes resulted in a driver of [sic] passenger being injured. This was compared to 165 injury collisions on 50mph routes and 268 on 70mph dual carriageways. The figures highlight a five year high for collisions on 20mph routes. A total of 515 were recorded back in 2021, followed by a reduction to 488 two years later.<sup>1</sup></p>
+</blockquote>
+<p>While these are real numbers from a real dataset, they don’t contain enough information to draw any conclusions about the effect of 20mph zones. The most glaring issue I have with this is that <strong>if there are more roads with 20mph than last year then more collisions will happen on those roads.</strong> Saying that the number of collisions is at a five year high doesn’t tell you much if you don’t take into account the underlying conditions behind that number.</p>
+<p>A more informative figure here could be “collisions / kilometer of road type” or even better “collisions / vehicle kilometer on that road type”. The former of these would account for changes in the make-up of the road network while the latter would also account for changes in vehicle volumes. It turns out that the data to make these comparisons is trickier to get hold of (more on that later) but that doesn’t excuse choosing meaningless numbers to make a point.</p>
+</section>
+<section id="only-20mph-can-beat-30mph-here" class="level3">
+<h3 class="anchored" data-anchor-id="only-20mph-can-beat-30mph-here">🚩 “Only 20mph can beat 30mph here”</h3>
+<p>The next statistical sin feels a lot like the <a href="https://fullfact.org/politics/election-leaflets-2026/">dodgy graphs on the back of election leaflets</a>. Here’s Tim Eagle MSP quoted in the article:</p>
+<blockquote class="blockquote">
+<p>20mph zones account for the third highest number of vehicle crashes that result in an injury, with more collisions than in 40mph, 50mph and 70mph areas</p>
+</blockquote>
+<p>If we take the figures quoted earlier and graph them you can certainly see Mr Eagle’s point:</p>
+<div class="cell">
+<div id="fig-badspeedlimits" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-badspeedlimits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-6508b8ec908aaea6f016" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-6508b8ec908aaea6f016">{"x":{"visdat":{"a2b62d9af812":["function () ","plotlyVisDat"]},"cur_data":"a2b62d9af812","attrs":{"a2b62d9af812":{"x":{},"y":{},"marker":{"color":["#eb6834","#2a78d6","#2a78d6","#2a78d6"]},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","type":"category","categoryorder":"array","categoryarray":["20mph","40mph","50mph","70mph"]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"Number of collisions"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":["20mph","40mph","50mph","70mph"],"y":[570,254,165,268],"marker":{"color":["#eb6834","#2a78d6","#2a78d6","#2a78d6"],"line":{"color":"rgba(31,119,180,1)"}},"text":[570,254,165,268],"textposition":["outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-badspeedlimits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: 2025 injury collisions on 20mph, 40mph, 50mph and 70mph roads in Scotland
+</figcaption>
+</figure>
+</div>
+</div>
+<p>You may have noticed that the values for 30mph roads and 60mph roads aren’t referenced in the articles. Lets pull them out and add them to the graph:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#| label: fig-allspeedlimits</span></span>
+<span id="cb1-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#| fig-cap: "2025 injury collisions in Scotland by speed limit"</span></span>
+<span id="cb1-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#| fig-alt: "Bar chart showing injury collision counts for all six speed limits in Scotland in 2025: 20mph, 30mph, 40mph, 50mph, 60mph and 70mph. 30mph has the highest count at 1,729, followed by 60mph at 1,118. 20mph, at 570, is third highest, well below both."</span></span>
+<span id="cb1-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#| echo: false</span></span>
+<span id="cb1-5"></span>
+<span id="cb1-6">all_speeds <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">data.frame</span>(</span>
+<span id="cb1-7">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">speed_limit =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">factor</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"20mph"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"30mph"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"40mph"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"50mph"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"60mph"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"70mph"</span>),</span>
+<span id="cb1-8">                        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">levels =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"20mph"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"30mph"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"40mph"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"50mph"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"60mph"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"70mph"</span>)),</span>
+<span id="cb1-9">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">collisions =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">570</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1729</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">254</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">165</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1118</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">268</span>)</span>
+<span id="cb1-10">)</span>
+<span id="cb1-11"></span>
+<span id="cb1-12"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">plot_ly</span>(</span>
+<span id="cb1-13">  all_speeds,</span>
+<span id="cb1-14">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span>speed_limit,</span>
+<span id="cb1-15">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span>collisions,</span>
+<span id="cb1-16">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">type =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"bar"</span>,</span>
+<span id="cb1-17">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">marker =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color =</span> accent_blue),</span>
+<span id="cb1-18">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">text =</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span>collisions,</span>
+<span id="cb1-19">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">textposition =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"outside"</span>,</span>
+<span id="cb1-20">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">showlegend =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span></span>
+<span id="cb1-21">) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-22">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">plotly_theme</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y_title =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Number of collisions"</span>)</span></code></pre></div></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-f6785c6bbae1590e6b10" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-f6785c6bbae1590e6b10">{"x":{"visdat":{"a2b67e5c0a73":["function () ","plotlyVisDat"]},"cur_data":"a2b67e5c0a73","attrs":{"a2b67e5c0a73":{"x":{},"y":{},"marker":{"color":"#2a78d6"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","type":"category","categoryorder":"array","categoryarray":["20mph","30mph","40mph","50mph","60mph","70mph"]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"Number of collisions"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":["20mph","30mph","40mph","50mph","60mph","70mph"],"y":[570,1729,254,165,1118,268],"marker":{"color":"#2a78d6","line":{"color":"rgba(31,119,180,1)"}},"text":[570,1729,254,165,1118,268],"textposition":["outside","outside","outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>Oh.</p>
+<p>So here’s the thing - it’s OK to exclude some data from your comparisons if you have justification for doing so. In fact I’m going to do just that later in the blog. No justification is given in the article for not reporting the numbers for 30mph and 60mph, and I can’t even charitably think of one that anyone might give in good faith. You could argue, in fact that given most new 20mph limits are replacing existent 30mph limits that the comparison between those two is the most important one you could make.</p>
+<p>If we accept the logic of the article that the collisions number is a useful proxy for safety (we shouldn’t), then turning 30mph zones into 20mph zones would be an obvious step to improve safety. The whole picture is completely different with the inclusion of that data. Omitting to mention the counts for 30mph and 60mph without justification is at best misleading and at worst wilfully dishonest.</p>
+</section>
+<section id="the-secret-to-stats-is-the-same-as-the-secret-to-comedy" class="level3">
+<h3 class="anchored" data-anchor-id="the-secret-to-stats-is-the-same-as-the-secret-to-comedy">🚩The Secret to Stats is the Same as the Secret to Comedy</h3>
+<p>…Timing.</p>
+<p>Lets look at one of the claims in the headline:</p>
+<blockquote class="blockquote">
+<p>20mph speed limit branded ‘ploy against drivers’ as collisions reach five year high</p>
+</blockquote>
+<p>Of course, it is factually correct that collisions in 20mph zones has reached a 5 year high. Here’s a graph to prove it:</p>
+<div class="cell">
+<div id="fig-20trend" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-20trend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-1189df0e933e4bd1a7af" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-1189df0e933e4bd1a7af">{"x":{"visdat":{"a2b66ab9798a":["function () ","plotlyVisDat"]},"cur_data":"a2b66ab9798a","attrs":{"a2b66ab9798a":{"x":{},"y":{},"marker":{"color":"#eb6834"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","tickmode":"array","tickvals":[2021,2022,2023,2024,2025]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"20mph injury collisions"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":[2021,2022,2023,2024,2025],"y":[522,526,482,526,570],"marker":{"color":"#eb6834","line":{"color":"rgba(31,119,180,1)"}},"text":[522,526,482,526,570],"textposition":["outside","outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-20trend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: 20mph road injury collisions in Scotland, 2021–2025
+</figcaption>
+</figure>
+</div>
+</div>
+<p>It does indeed show numbers at a 5 year high, but does that support the claim that 20mph zones aren’t improving safety? If you want to show that on a time series graph you can annotate the graph to show where in time the intervention you’re talking about takes place, <a href="https://xkcd.com/1356">like in this classic from xkcd</a>. Let’s add in the deadline for the roll-out of 20mph zones in Scotland, March 2026:</p>
+<div class="cell">
+<div id="fig-20trend-deadline" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-20trend-deadline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-45cd9cc571f0d9b8ec21" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-45cd9cc571f0d9b8ec21">{"x":{"visdat":{"a2b672afe6c":["function () ","plotlyVisDat"]},"cur_data":"a2b672afe6c","attrs":{"a2b672afe6c":{"x":{},"y":{},"marker":{"color":"#eb6834"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","tickmode":"array","tickvals":[2021,2022,2023,2024,2025],"range":[2020.4000000000001,2026.8]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"20mph injury collisions"},"legend":{"orientation":"h","y":-0.20000000000000001},"shapes":[{"type":"line","x0":2026.2,"x1":2026.2,"y0":0,"y1":600,"line":{"color":"#d62828","dash":"dash","width":1.5}}],"annotations":[{"x":2026.2,"y":600,"text":"National rollout<br />deadline: March 2026","showarrow":false,"xanchor":"left","font":{"size":11,"color":"#d62828"}}],"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":[2021,2022,2023,2024,2025],"y":[522,526,482,526,570],"marker":{"color":"#eb6834","line":{"color":"rgba(31,119,180,1)"}},"text":[522,526,482,526,570],"textposition":["outside","outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-20trend-deadline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: 20mph road injury collisions in Scotland, 2021–2025, against the national rollout deadline
+</figcaption>
+</figure>
+</div>
+</div>
+<p>The article is using data to infer the effects of a policy that is taken before that policy has been enacted. It’s a bit like calling your GP to complain that your antibiotics aren’t working before you’ve started taking them. The Scottish Greens, who championed the policy in the Scottish Parliament surveyed all local authorities <a href="https://greens.scot/news/councils-must-step-up-20mph-promise">and found that only 5 had completed the roll-out in June 2026</a>. To be clear you cannot blame anything found in this data on the 20mph roll-out because, as far as the data is concerned it hasn’t happened yet.</p>
+</section>
+<section id="a-better-use-of-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="a-better-use-of-the-data">A Better Use of the Data</h2>
+<p>I don’t want to just sit here and criticise the article, I want to see if there’s something we can genuinely learn from the data if we treat it with more respect. I’ll add links to my primary data throughout.</p>
+<section id="a-better-denominator" class="level3">
+<h3 class="anchored" data-anchor-id="a-better-denominator">✅ A Better Denominator</h3>
+<p>As I mention above, a more meaningful statistic is possible here if we put the collisions in the correct context. I’ve tried to find a breakdown of the length of each road in Scotland by speed limit but the closest thing I can find is in <a href="https://www.transport.gov.scot/publication/scottish-transport-statistics-2025">Transport Scotland’s Scottish Transport Statistics 2025 Report</a>. Near the bottom of that page is the link to the Excel sheets for Chapter 4 - Road Network, where the roads are broken down into ‘Roads up to 40mph’ and ‘Roads over 40mph’. This isn’t granular enough for looking at specific speed limits, so I’ve sent an FOI to Transport Scotland to see if they hold the data at individual speed limit level.</p>
+<p>The same report details traffic volumes in Chapter 5 - Road Traffic. The published dataset splits the traffic volume estimates (given in million vehicle kilometers) by road type rather than speed limit. The distinction of minor/major roads doesn’t map perfectly with speed limits - some minor roads will have high speed limits and vice versa - but the vast majority of roads affected by the 20mph roll-out will be minor roads. Here, I’m having to make a judgement call about the compromise I have to make in the data, but crucially I’ve also stated my defense for my choice. I’ll proceed with this with the caveat that it contains volumes of traffic on roads that we’re not interested in. Here’s the trend in that measure from the data:</p>
+<div class="cell">
+<div id="fig-minorroadtraffic" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-minorroadtraffic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-6d6b9621f7acff8a1cca" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-6d6b9621f7acff8a1cca">{"x":{"visdat":{"a2b65b00c182":["function () ","plotlyVisDat"]},"cur_data":"a2b65b00c182","attrs":{"a2b65b00c182":{"x":{},"y":{},"marker":{"color":"#2a78d6"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","tickmode":"array","tickvals":[2021,2022,2023,2024]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"Traffic volume (million vehicle-km)"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":[2021,2022,2023,2024],"y":[15908,17009,17221,17633],"marker":{"color":"#2a78d6","line":{"color":"rgba(31,119,180,1)"}},"text":["15,908","17,009","17,221","17,633"],"textposition":["outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-minorroadtraffic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Traffic volume on minor roads (B, C and unclassified) in Scotland, 2021–2024
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="a-defensible-subset-of-data" class="level3">
+<h3 class="anchored" data-anchor-id="a-defensible-subset-of-data">✅ A Defensible Subset of Data</h3>
+<p>Time to focus on which data will tell us something useful. Given the focus of the question is whether the 20mph policy improves road safety, I think it’s important to consider the desired outcome of the policy. <a href="https://www.transport.gov.scot/media/3yxfd5tp/the-implementation-guide-for-20-mph-speed-limits-in-scotland.pdf">The Scottish Goverment’s Implementation for 20mph limits</a> highlights the importance of reducing the severity of collisions:</p>
+<blockquote class="blockquote">
+<p>The speed of a vehicle directly influences the risk of a collision as well as the severity of injuries sustained, and the likelihood of death resulting from that collision.</p>
+</blockquote>
+<p>With that in mind, choosing to focus on collisions in which one or more casualty is killed or seriously injured (so-called KSI collisions) allows both the frequency and severity of collisions to be covered in the analysis. Again, this is a choice that I have made to exclude some data from my analysis but I’ve made clear my reason for doing so. Here’s that trend, not corrected for traffic volume:</p>
+<div class="cell">
+<div id="fig-minorksicount" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-minorksicount-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-d3467cf960683dd939ac" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-d3467cf960683dd939ac">{"x":{"visdat":{"a2b67e58864b":["function () ","plotlyVisDat"]},"cur_data":"a2b67e58864b","attrs":{"a2b67e58864b":{"x":{},"y":{},"marker":{"color":"#6b7278"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","tickmode":"array","tickvals":[2021,2022,2023,2024]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"KSI collisions"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":[2021,2022,2023,2024],"y":[744,793,878,871],"marker":{"color":"#6b7278","line":{"color":"rgba(31,119,180,1)"}},"text":[744,793,878,871],"textposition":["outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-minorksicount-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: KSI collisions on minor roads (B, C and unclassified) in Scotland, 2021–2024
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="a-realistic-conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="a-realistic-conclusion">✅ A Realistic Conclusion</h3>
+<p>You may have noticed that I don’t have any data for 2025 above - that’s because I don’t have the traffic volume data for 2025 yet. This limits the scope of the conclusions we can make but it doesn’t mean we can’t learn something. Here’s the KSI collision rate corrected for traffic volume:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#| label: fig-minorksirate</span></span>
+<span id="cb2-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#| fig-cap: "KSI collisions per billion vehicle-km on minor roads in Scotland, 2021–2024"</span></span>
+<span id="cb2-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#| fig-alt: "Bar chart showing killed or seriously injured collisions on minor roads in Scotland, adjusted for traffic volume, per billion vehicle-kilometres, by year: 46.8 in 2021, 46.6 in 2022, 51.0 in 2023, and 49.4 in 2024."</span></span>
+<span id="cb2-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#| echo: false</span></span>
+<span id="cb2-5"></span>
+<span id="cb2-6"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">plot_ly</span>(</span>
+<span id="cb2-7">  ksi_minor, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span>collision_year, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span>ksi_per_billion_vkm,</span>
+<span id="cb2-8">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">type =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"bar"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">marker =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color =</span> millburn_orange),</span>
+<span id="cb2-9">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">text =</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span>ksi_per_billion_vkm, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">textposition =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"outside"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">showlegend =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span></span>
+<span id="cb2-10">) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb2-11">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">plotly_theme</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y_title =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"KSI per billion vehicle-km"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb2-12">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">layout</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">xaxis =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">gridcolor =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#e0e6ea"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">zeroline =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">""</span>,</span>
+<span id="cb2-13">                       <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">tickmode =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"array"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">tickvals =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2021</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2024</span>))</span></code></pre></div></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-3458e3f4e7b7a7a94093" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-3458e3f4e7b7a7a94093">{"x":{"visdat":{"a2b61258eb79":["function () ","plotlyVisDat"]},"cur_data":"a2b61258eb79","attrs":{"a2b61258eb79":{"x":{},"y":{},"marker":{"color":"#eb6834"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","tickmode":"array","tickvals":[2021,2022,2023,2024]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"KSI per billion vehicle-km"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":[2021,2022,2023,2024],"y":[46.799999999999997,46.600000000000001,51,49.399999999999999],"marker":{"color":"#eb6834","line":{"color":"rgba(31,119,180,1)"}},"text":[46.799999999999997,46.600000000000001,51,49.399999999999999],"textposition":["outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>There’s no clear trend on display here, but we can see that 2023 and 2024 have higher traffic-adjusted rates of KSI collisions than the preceding years. There’s nothing in this data that point to a cause for that rise but it’s there and it’s real. Here’s my attempt at a statistically defensible headline from that data:</p>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Serious crash rate on minor roads averaged 7.5% higher in 2023–24 than 2021–22.</p>
+</div>
+</div>
+</div>
+<p>And that’s it. There’s no evidence that 20mph zones may have caused it, no evidence of a war on motorists. Just and indication of something that could be a problem - the kind of problem that needs an intervention to fix it.</p>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>My own pull of the same STATS19 data gives 522 collisions in 2021 and 482 in 2023, not 515 and 488 as quoted here. STATS19 records are periodically revised as late reports and corrections come in, so this is most likely a difference in when each of us pulled the data, rather than an error on either side.↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>infrastructure</category>
+  <category>case-study</category>
+  <category>data</category>
+  <guid>https://themodeshift.scot/posts/2026-09-10-courier-20mph-article/</guid>
+  <pubDate>Thu, 10 Sep 2026 23:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Millburn Road - The Data</title>
   <link>https://themodeshift.scot/posts/2026-09-04-inverness-data/</link>
@@ -32,8 +427,8 @@
 <div id="fig-eastwest" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-eastwest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-115ad4e5c49eb0696692" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-115ad4e5c49eb0696692">{"x":{"visdat":{"54414a0cb395":["function () ","plotlyVisDat"]},"cur_data":"54414a0cb395","attrs":{"54414a0cb395":{"x":{},"y":{},"mode":"lines+markers","line":{"width":2.5},"marker":{"size":5},"color":{},"colors":["#6b7278","#eb6834"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":""},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"Avg daily cycle count"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":["2022-01-01","2022-02-01","2022-03-01","2022-04-01","2022-05-01","2022-06-01","2022-07-01","2022-08-01","2022-09-01","2022-10-01","2022-11-01","2022-12-01","2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01","2025-01-01","2025-02-01","2025-03-01","2025-04-01","2025-05-01","2025-06-01","2025-07-01","2025-08-01","2025-09-01","2025-10-01","2025-11-01","2025-12-01","2026-01-01","2026-02-01","2026-03-01","2026-04-01","2026-05-01","2026-06-01"],"y":[74.258064516129039,93.428571428571431,85.193548387096769,83.066666666666663,80.193548387096769,116.76666666666667,133.58064516129033,134.06451612903226,118.53333333333333,54.032258064516128,45.06666666666667,35.096774193548384,37.677419354838712,39.25,41.677419354838712,54.333333333333329,65.096774193548384,56.799999999999997,60.774193548387096,56.064516129032256,58.06666666666667,44.612903225806448,41.600000000000001,31.35483870967742,30.225806451612904,35.96551724137931,50.645161290322584,53.13333333333334,61.806451612903224,56.266666666666666,54.064516129032256,58.193548387096776,55.06666666666667,44.322580645161288,40.833333333333329,29.774193548387096,16.741935483870968,19.071428571428573,21.29032258064516,28.133333333333336,24.642857142857142,23.071428571428573,26.899999999999999,28.833333333333332,26.888888888888889,21.464285714285715,20.285714285714285,17.482758620689655,13.357142857142856,17.5,18.310344827586206,17.222222222222221,28,22.800000000000001],"mode":"lines+markers","line":{"color":"rgba(107,114,120,1)","width":2.5},"marker":{"color":"rgba(107,114,120,1)","size":5,"line":{"color":"rgba(107,114,120,1)"}},"type":"scatter","name":"Eastward","textfont":{"color":"rgba(107,114,120,1)"},"error_y":{"color":"rgba(107,114,120,1)"},"error_x":{"color":"rgba(107,114,120,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2022-01-01","2022-02-01","2022-03-01","2022-04-01","2022-05-01","2022-06-01","2022-07-01","2022-08-01","2022-09-01","2022-10-01","2022-11-01","2022-12-01","2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01","2025-01-01","2025-02-01","2025-03-01","2025-04-01","2025-05-01","2025-06-01","2025-07-01","2025-08-01","2025-09-01","2025-10-01","2025-11-01","2025-12-01","2026-01-01","2026-02-01","2026-03-01","2026-04-01","2026-05-01","2026-06-01"],"y":[465.90322580645159,447.14285714285717,599.06451612903231,567.16666666666663,692.0322580645161,788.5,718.09677419354841,817.70967741935488,813.20000000000005,529.19354838709683,497.69999999999999,290.90322580645159,298.77419354838707,380.75,400.51612903225805,470.36666666666667,534.32258064516134,582.76666666666665,489.22580645161293,550.16129032258061,577.86666666666667,479.90322580645159,444.43333333333334,340.51612903225805,280.16129032258067,349.58620689655174,397.12903225806451,426.93333333333328,471.58064516129031,452,434.51612903225805,468.48387096774195,459.46666666666664,411.03225806451616,345.80000000000001,75.225806451612883,0,0,175.73333333333332,241.65517241379311,245.76666666666668,235.41379310344828,241.36666666666667,237.61290322580646,252.69230769230768,205.38461538461539,179.21428571428572,142.25,123.85714285714285,157.11111111111111,172.31034482758622,169.75,218.55555555555554,205.06666666666666],"mode":"lines+markers","line":{"color":"rgba(235,104,52,1)","width":2.5},"marker":{"color":"rgba(235,104,52,1)","size":5,"line":{"color":"rgba(235,104,52,1)"}},"type":"scatter","name":"Westward","textfont":{"color":"rgba(235,104,52,1)"},"error_y":{"color":"rgba(235,104,52,1)"},"error_x":{"color":"rgba(235,104,52,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-647e621826ddfcf06afd" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-647e621826ddfcf06afd">{"x":{"visdat":{"a30e6c2eaa2d":["function () ","plotlyVisDat"]},"cur_data":"a30e6c2eaa2d","attrs":{"a30e6c2eaa2d":{"x":{},"y":{},"mode":"lines+markers","line":{"width":2.5},"marker":{"size":5},"color":{},"colors":["#6b7278","#eb6834"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":""},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"Avg daily cycle count"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":["2022-01-01","2022-02-01","2022-03-01","2022-04-01","2022-05-01","2022-06-01","2022-07-01","2022-08-01","2022-09-01","2022-10-01","2022-11-01","2022-12-01","2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01","2025-01-01","2025-02-01","2025-03-01","2025-04-01","2025-05-01","2025-06-01","2025-07-01","2025-08-01","2025-09-01","2025-10-01","2025-11-01","2025-12-01","2026-01-01","2026-02-01","2026-03-01","2026-04-01","2026-05-01","2026-06-01"],"y":[74.258064516129039,93.428571428571431,85.193548387096769,83.066666666666663,80.193548387096769,116.76666666666667,133.58064516129033,134.06451612903226,118.53333333333333,54.032258064516128,45.06666666666667,35.096774193548384,37.677419354838712,39.25,41.677419354838712,54.333333333333329,65.096774193548384,56.799999999999997,60.774193548387096,56.064516129032256,58.06666666666667,44.612903225806448,41.600000000000001,31.35483870967742,30.225806451612904,35.96551724137931,50.645161290322584,53.13333333333334,61.806451612903224,56.266666666666666,54.064516129032256,58.193548387096776,55.06666666666667,44.322580645161288,40.833333333333329,29.774193548387096,16.741935483870968,19.071428571428573,21.29032258064516,28.133333333333336,24.642857142857142,23.071428571428573,26.899999999999999,28.833333333333332,26.888888888888889,21.464285714285715,20.285714285714285,17.482758620689655,13.357142857142856,17.5,18.310344827586206,17.222222222222221,28,22.800000000000001],"mode":"lines+markers","line":{"color":"rgba(107,114,120,1)","width":2.5},"marker":{"color":"rgba(107,114,120,1)","size":5,"line":{"color":"rgba(107,114,120,1)"}},"type":"scatter","name":"Eastward","textfont":{"color":"rgba(107,114,120,1)"},"error_y":{"color":"rgba(107,114,120,1)"},"error_x":{"color":"rgba(107,114,120,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2022-01-01","2022-02-01","2022-03-01","2022-04-01","2022-05-01","2022-06-01","2022-07-01","2022-08-01","2022-09-01","2022-10-01","2022-11-01","2022-12-01","2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01","2025-01-01","2025-02-01","2025-03-01","2025-04-01","2025-05-01","2025-06-01","2025-07-01","2025-08-01","2025-09-01","2025-10-01","2025-11-01","2025-12-01","2026-01-01","2026-02-01","2026-03-01","2026-04-01","2026-05-01","2026-06-01"],"y":[465.90322580645159,447.14285714285717,599.06451612903231,567.16666666666663,692.0322580645161,788.5,718.09677419354841,817.70967741935488,813.20000000000005,529.19354838709683,497.69999999999999,290.90322580645159,298.77419354838707,380.75,400.51612903225805,470.36666666666667,534.32258064516134,582.76666666666665,489.22580645161293,550.16129032258061,577.86666666666667,479.90322580645159,444.43333333333334,340.51612903225805,280.16129032258067,349.58620689655174,397.12903225806451,426.93333333333328,471.58064516129031,452,434.51612903225805,468.48387096774195,459.46666666666664,411.03225806451616,345.80000000000001,75.225806451612883,0,0,175.73333333333332,241.65517241379311,245.76666666666668,235.41379310344828,241.36666666666667,237.61290322580646,252.69230769230768,205.38461538461539,179.21428571428572,142.25,123.85714285714285,157.11111111111111,172.31034482758622,169.75,218.55555555555554,205.06666666666666],"mode":"lines+markers","line":{"color":"rgba(235,104,52,1)","width":2.5},"marker":{"color":"rgba(235,104,52,1)","size":5,"line":{"color":"rgba(235,104,52,1)"}},"type":"scatter","name":"Westward","textfont":{"color":"rgba(235,104,52,1)"},"error_y":{"color":"rgba(235,104,52,1)"},"error_x":{"color":"rgba(235,104,52,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eastwest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Average daily cycle counts on Millburn Road by direction, 2022–2026

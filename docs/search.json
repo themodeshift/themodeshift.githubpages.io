@@ -32,7 +32,7 @@
     "href": "about.html#get-in-touch",
     "title": "About",
     "section": "Get in touch",
-    "text": "Get in touch\n{{&lt; bi envelope &gt;}} email: steve@themodeshift.scot\n{{&lt; bi bluesky &gt;}} bluesky: @themodeshift.scot"
+    "text": "Get in touch\n email: steve@themodeshift.scot\n bluesky: @themodeshift.scot"
   },
   {
     "objectID": "posts/2026-09-02-hello-world/index.html",
@@ -47,6 +47,27 @@
     "title": "Millburn Road - The Data",
     "section": "",
     "text": "Now we’ve got some data lets see"
+  },
+  {
+    "objectID": "posts/2026-09-10-courier-20mph-article/index.html",
+    "href": "posts/2026-09-10-courier-20mph-article/index.html",
+    "title": "Inverness Courier - Bad 20mph Stats",
+    "section": "",
+    "text": "This article in the Inverness Courier was brought to my attention and it immediately brought up some statistical red flags. Road safety is an important factor in active travel and I feel it’s important to challenge bad stats when we see them. I’ve written directly to the Courier as well as the MSP quoted in the article, Tim Eagle, with some of my objections but I’d like to go into more detail here.\nThe article suggests that the Scottish Governments expansion of 20mph speed limits on its road networks is not successful because of a slight rise in road traffic collisions in 20mph zones in 2025. Here I’m going to list my red flags and explain in detail why this article should not be taken seriously."
+  },
+  {
+    "objectID": "posts/2026-09-10-courier-20mph-article/index.html#a-better-use-of-the-data",
+    "href": "posts/2026-09-10-courier-20mph-article/index.html#a-better-use-of-the-data",
+    "title": "Inverness Courier - Bad 20mph Stats",
+    "section": "A Better Use of the Data",
+    "text": "A Better Use of the Data\nI don’t want to just sit here and criticise the article, I want to see if there’s something we can genuinely learn from the data if we treat it with more respect. I’ll add links to my primary data throughout.\n\n✅ A Better Denominator\nAs I mention above, a more meaningful statistic is possible here if we put the collisions in the correct context. I’ve tried to find a breakdown of the length of each road in Scotland by speed limit but the closest thing I can find is in Transport Scotland’s Scottish Transport Statistics 2025 Report. Near the bottom of that page is the link to the Excel sheets for Chapter 4 - Road Network, where the roads are broken down into ‘Roads up to 40mph’ and ‘Roads over 40mph’. This isn’t granular enough for looking at specific speed limits, so I’ve sent an FOI to Transport Scotland to see if they hold the data at individual speed limit level.\nThe same report details traffic volumes in Chapter 5 - Road Traffic. The published dataset splits the traffic volume estimates (given in million vehicle kilometers) by road type rather than speed limit. The distinction of minor/major roads doesn’t map perfectly with speed limits - some minor roads will have high speed limits and vice versa - but the vast majority of roads affected by the 20mph roll-out will be minor roads. Here, I’m having to make a judgement call about the compromise I have to make in the data, but crucially I’ve also stated my defense for my choice. I’ll proceed with this with the caveat that it contains volumes of traffic on roads that we’re not interested in. Here’s the trend in that measure from the data:\n\n\n\n\n\n\n\n\nFigure 4: Traffic volume on minor roads (B, C and unclassified) in Scotland, 2021–2024\n\n\n\n\n\n\n✅ A Defensible Subset of Data\nTime to focus on which data will tell us something useful. Given the focus of the question is whether the 20mph policy improves road safety, I think it’s important to consider the desired outcome of the policy. The Scottish Goverment’s Implementation for 20mph limits highlights the importance of reducing the severity of collisions:\n\nThe speed of a vehicle directly influences the risk of a collision as well as the severity of injuries sustained, and the likelihood of death resulting from that collision.\n\nWith that in mind, choosing to focus on collisions in which one or more casualty is killed or seriously injured (so-called KSI collisions) allows both the frequency and severity of collisions to be covered in the analysis. Again, this is a choice that I have made to exclude some data from my analysis but I’ve made clear my reason for doing so. Here’s that trend, not corrected for traffic volume:\n\n\n\n\n\n\n\n\nFigure 5: KSI collisions on minor roads (B, C and unclassified) in Scotland, 2021–2024\n\n\n\n\n\n\n✅ A Realistic Conclusion\nYou may have noticed that I don’t have any data for 2025 above - that’s because I don’t have the traffic volume data for 2025 yet. This limits the scope of the conclusions we can make but it doesn’t mean we can’t learn something. Here’s the KSI collision rate corrected for traffic volume:\n\n#| label: fig-minorksirate\n#| fig-cap: \"KSI collisions per billion vehicle-km on minor roads in Scotland, 2021–2024\"\n#| fig-alt: \"Bar chart showing killed or seriously injured collisions on minor roads in Scotland, adjusted for traffic volume, per billion vehicle-kilometres, by year: 46.8 in 2021, 46.6 in 2022, 51.0 in 2023, and 49.4 in 2024.\"\n#| echo: false\n\nplot_ly(\n  ksi_minor, x = ~collision_year, y = ~ksi_per_billion_vkm,\n  type = \"bar\", marker = list(color = millburn_orange),\n  text = ~ksi_per_billion_vkm, textposition = \"outside\", showlegend = FALSE\n) %&gt;%\n  plotly_theme(y_title = \"KSI per billion vehicle-km\") %&gt;%\n  layout(xaxis = list(gridcolor = \"#e0e6ea\", zeroline = FALSE, title = \"\",\n                       tickmode = \"array\", tickvals = 2021:2024))\n\n\n\n\n\nThere’s no clear trend on display here, but we can see that 2023 and 2024 have higher traffic-adjusted rates of KSI collisions than the preceding years. There’s nothing in this data that point to a cause for that rise but it’s there and it’s real. Here’s my attempt at a statistically defensible headline from that data:\n\n\n\n\n\n\nSerious crash rate on minor roads averaged 7.5% higher in 2023–24 than 2021–22.\n\n\n\nAnd that’s it. There’s no evidence that 20mph zones may have caused it, no evidence of a war on motorists. Just and indication of something that could be a problem - the kind of problem that needs an intervention to fix it."
+  },
+  {
+    "objectID": "posts/2026-09-10-courier-20mph-article/index.html#footnotes",
+    "href": "posts/2026-09-10-courier-20mph-article/index.html#footnotes",
+    "title": "Inverness Courier - Bad 20mph Stats",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nMy own pull of the same STATS19 data gives 522 collisions in 2021 and 482 in 2023, not 515 and 488 as quoted here. STATS19 records are periodically revised as late reports and corrections come in, so this is most likely a difference in when each of us pulled the data, rather than an error on either side.↩︎"
   },
   {
     "objectID": "posts/2026-09-04-inverness-data/index.html",
@@ -74,6 +95,6 @@
     "href": "index.html",
     "title": "The Mode Shift",
     "section": "",
-    "text": "Data-driven analysis of active travel in Scotland — cycling volumes, mode share, and the infrastructure behind them.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMillburn Road - The Data\n\n\n\ninfrastructure\n\ncase-study\n\ndata\n\n\n\n\n\n\n\n\n\nSep 4, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMillburn Road - The Data\n\n\n\ninfrastructure\n\ncase-study\n\ndata\n\n\n\n\n\n\n\n\n\nSep 4, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMillburn Road, Inverness - The Background\n\n\n\ninfrastructure\n\ncase-study\n\n\n\n\n\n\n\n\n\nSep 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nHello, Mode Shift\n\n\n\nmeta\n\n\n\n\n\n\n\n\n\nSep 2, 2026\n\n\n\n\n\nNo matching items"
+    "text": "Data-driven analysis of active travel in Scotland — cycling volumes, mode share, and the infrastructure behind them.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInverness Courier - Bad 20mph Stats\n\n\n\ninfrastructure\n\ncase-study\n\ndata\n\n\n\n\n\n\n\n\n\nSep 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMillburn Road - The Data\n\n\n\ninfrastructure\n\ncase-study\n\ndata\n\n\n\n\n\n\n\n\n\nSep 4, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMillburn Road - The Data\n\n\n\ninfrastructure\n\ncase-study\n\ndata\n\n\n\n\n\n\n\n\n\nSep 4, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMillburn Road, Inverness - The Background\n\n\n\ninfrastructure\n\ncase-study\n\n\n\n\n\n\n\n\n\nSep 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nHello, Mode Shift\n\n\n\nmeta\n\n\n\n\n\n\n\n\n\nSep 2, 2026\n\n\n\n\n\nNo matching items"
   }
 ]
