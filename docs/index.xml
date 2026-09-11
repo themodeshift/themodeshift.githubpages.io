@@ -51,8 +51,8 @@
 <div id="fig-badspeedlimits" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-badspeedlimits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-5da5e010c420bf56c834" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-5da5e010c420bf56c834">{"x":{"visdat":{"a8a549f150ef":["function () ","plotlyVisDat"]},"cur_data":"a8a549f150ef","attrs":{"a8a549f150ef":{"x":{},"y":{},"marker":{"color":["#eb6834","#2a78d6","#2a78d6","#2a78d6"]},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","type":"category","categoryorder":"array","categoryarray":["20mph","40mph","50mph","70mph"]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"Number of collisions"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":["20mph","40mph","50mph","70mph"],"y":[570,254,165,268],"marker":{"color":["#eb6834","#2a78d6","#2a78d6","#2a78d6"],"line":{"color":"rgba(31,119,180,1)"}},"text":[570,254,165,268],"textposition":["outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-1be348873b28f462392a" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-1be348873b28f462392a">{"x":{"visdat":{"ad992ed009b0":["function () ","plotlyVisDat"]},"cur_data":"ad992ed009b0","attrs":{"ad992ed009b0":{"x":{},"y":{},"marker":{"color":["#eb6834","#2a78d6","#2a78d6","#2a78d6"]},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","type":"category","categoryorder":"array","categoryarray":["20mph","40mph","50mph","70mph"]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"Number of collisions"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":["20mph","40mph","50mph","70mph"],"y":[570,254,165,268],"marker":{"color":["#eb6834","#2a78d6","#2a78d6","#2a78d6"],"line":{"color":"rgba(31,119,180,1)"}},"text":[570,254,165,268],"textposition":["outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-badspeedlimits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: 2025 injury collisions on 20mph, 40mph, 50mph and 70mph roads in Scotland
@@ -62,133 +62,16 @@ Figure&nbsp;1: 2025 injury collisions on 20mph, 40mph, 50mph and 70mph roads in 
 </div>
 <p>You may have noticed that the values for 30mph roads and 60mph roads aren’t referenced in the articles. Lets pull them out and add them to the graph:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#| label: fig-allspeedlimits</span></span>
-<span id="cb1-2"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#| fig-cap: "2025 injury collisions in Scotland by speed limit"</span></span>
-<span id="cb1-3"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#| fig-alt: "Bar chart showing injury collision counts for all six speed limits in Scotland in 2025: 20mph, 30mph, 40mph, 50mph, 60mph and 70mph. 30mph has the highest count at 1,729, followed by 60mph at 1,118. 20mph, at 570, is third highest, well below both."</span></span>
-<span id="cb1-4"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#| echo: false</span></span>
-<span id="cb1-5"></span>
-<span id="cb1-6">all_speeds <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">data.frame</span>(</span>
-<span id="cb1-7">  <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">speed_limit =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">factor</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"20mph"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"30mph"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"40mph"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"50mph"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"60mph"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"70mph"</span>),</span>
-<span id="cb1-8">                        <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">levels =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"20mph"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"30mph"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"40mph"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"50mph"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"60mph"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"70mph"</span>)),</span>
-<span id="cb1-9">  <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">collisions =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">c</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">570</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1729</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">254</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">165</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1118</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">268</span>)</span>
-<span id="cb1-10">)</span>
-<span id="cb1-11"></span>
-<span id="cb1-12"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">plot_ly</span>(</span>
-<span id="cb1-13">  all_speeds,</span>
-<span id="cb1-14">  <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">x =</span> <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">~</span>speed_limit,</span>
-<span id="cb1-15">  <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">y =</span> <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">~</span>collisions,</span>
-<span id="cb1-16">  <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">type =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"bar"</span>,</span>
-<span id="cb1-17">  <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">marker =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">list</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">color =</span> accent_blue),</span>
-<span id="cb1-18">  <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">text =</span> <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">~</span>collisions,</span>
-<span id="cb1-19">  <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">textposition =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"outside"</span>,</span>
-<span id="cb1-20">  <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">showlegend =</span> <span class="cn" style="color: #8f5902;
-background-color: null;
-font-style: inherit;">FALSE</span></span>
-<span id="cb1-21">) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">%&gt;%</span></span>
-<span id="cb1-22">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">plotly_theme</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">y_title =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Number of collisions"</span>)</span></code></pre></div></div>
-<div class="cell-output-display">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-bb8e38d5e870963bbd53" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-bb8e38d5e870963bbd53">{"x":{"visdat":{"a8a52a64626":["function () ","plotlyVisDat"]},"cur_data":"a8a52a64626","attrs":{"a8a52a64626":{"x":{},"y":{},"marker":{"color":"#2a78d6"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","type":"category","categoryorder":"array","categoryarray":["20mph","30mph","40mph","50mph","60mph","70mph"]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"Number of collisions"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":["20mph","30mph","40mph","50mph","60mph","70mph"],"y":[570,1729,254,165,1118,268],"marker":{"color":"#2a78d6","line":{"color":"rgba(31,119,180,1)"}},"text":[570,1729,254,165,1118,268],"textposition":["outside","outside","outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="fig-allspeedlimits" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-allspeedlimits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-35301ffe85330b31df74" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-35301ffe85330b31df74">{"x":{"visdat":{"ad99509aa19":["function () ","plotlyVisDat"]},"cur_data":"ad99509aa19","attrs":{"ad99509aa19":{"x":{},"y":{},"marker":{"color":"#2a78d6"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","type":"category","categoryorder":"array","categoryarray":["20mph","30mph","40mph","50mph","60mph","70mph"]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"Number of collisions"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":["20mph","30mph","40mph","50mph","60mph","70mph"],"y":[570,1729,254,165,1118,268],"marker":{"color":"#2a78d6","line":{"color":"rgba(31,119,180,1)"}},"text":[570,1729,254,165,1118,268],"textposition":["outside","outside","outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-allspeedlimits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: 2025 injury collisions in Scotland by speed limit
+</figcaption>
+</figure>
 </div>
 </div>
 <p>Oh.</p>
@@ -207,11 +90,11 @@ font-style: inherit;">"Number of collisions"</span>)</span></code></pre></div></
 <div id="fig-20trend" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-20trend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-1597ff18fe433de7b04d" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-1597ff18fe433de7b04d">{"x":{"visdat":{"a8a55d3d801e":["function () ","plotlyVisDat"]},"cur_data":"a8a55d3d801e","attrs":{"a8a55d3d801e":{"x":{},"y":{},"marker":{"color":"#eb6834"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","tickmode":"array","tickvals":[2021,2022,2023,2024,2025]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"20mph injury collisions"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":[2021,2022,2023,2024,2025],"y":[522,526,482,526,570],"marker":{"color":"#eb6834","line":{"color":"rgba(31,119,180,1)"}},"text":[522,526,482,526,570],"textposition":["outside","outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-5778b0fc56249dfdb8f4" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-5778b0fc56249dfdb8f4">{"x":{"visdat":{"ad993f277562":["function () ","plotlyVisDat"]},"cur_data":"ad993f277562","attrs":{"ad993f277562":{"x":{},"y":{},"marker":{"color":"#eb6834"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","tickmode":"array","tickvals":[2021,2022,2023,2024,2025]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"20mph injury collisions"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":[2021,2022,2023,2024,2025],"y":[522,526,482,526,570],"marker":{"color":"#eb6834","line":{"color":"rgba(31,119,180,1)"}},"text":[522,526,482,526,570],"textposition":["outside","outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-20trend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: 20mph road injury collisions in Scotland, 2021–2025
+Figure&nbsp;3: 20mph road injury collisions in Scotland, 2021–2025
 </figcaption>
 </figure>
 </div>
@@ -221,11 +104,11 @@ Figure&nbsp;2: 20mph road injury collisions in Scotland, 2021–2025
 <div id="fig-20trend-deadline" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-20trend-deadline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-add16d40f773b3aacc62" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-add16d40f773b3aacc62">{"x":{"visdat":{"a8a5771bad5a":["function () ","plotlyVisDat"]},"cur_data":"a8a5771bad5a","attrs":{"a8a5771bad5a":{"x":{},"y":{},"marker":{"color":"#eb6834"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","tickmode":"array","tickvals":[2021,2022,2023,2024,2025],"range":[2020.4000000000001,2026.8]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"20mph injury collisions"},"legend":{"orientation":"h","y":-0.20000000000000001},"shapes":[{"type":"line","x0":2026.2,"x1":2026.2,"y0":0,"y1":600,"line":{"color":"#d62828","dash":"dash","width":1.5}}],"annotations":[{"x":2026.2,"y":600,"text":"National rollout<br />deadline: March 2026","showarrow":false,"xanchor":"left","font":{"size":11,"color":"#d62828"}}],"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":[2021,2022,2023,2024,2025],"y":[522,526,482,526,570],"marker":{"color":"#eb6834","line":{"color":"rgba(31,119,180,1)"}},"text":[522,526,482,526,570],"textposition":["outside","outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-8ee0d2230433b3c72792" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-8ee0d2230433b3c72792">{"x":{"visdat":{"ad9964168fcd":["function () ","plotlyVisDat"]},"cur_data":"ad9964168fcd","attrs":{"ad9964168fcd":{"x":{},"y":{},"marker":{"color":"#eb6834"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","tickmode":"array","tickvals":[2021,2022,2023,2024,2025],"range":[2020.4000000000001,2026.8]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"20mph injury collisions"},"legend":{"orientation":"h","y":-0.20000000000000001},"shapes":[{"type":"line","x0":2026.2,"x1":2026.2,"y0":0,"y1":600,"line":{"color":"#d62828","dash":"dash","width":1.5}}],"annotations":[{"x":2026.2,"y":600,"text":"National rollout<br />deadline: March 2026","showarrow":false,"xanchor":"left","font":{"size":11,"color":"#d62828"}}],"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":[2021,2022,2023,2024,2025],"y":[522,526,482,526,570],"marker":{"color":"#eb6834","line":{"color":"rgba(31,119,180,1)"}},"text":[522,526,482,526,570],"textposition":["outside","outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-20trend-deadline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: 20mph road injury collisions in Scotland, 2021–2025, against the national rollout deadline
+Figure&nbsp;4: 20mph road injury collisions in Scotland, 2021–2025, against the national rollout deadline
 </figcaption>
 </figure>
 </div>
@@ -243,11 +126,11 @@ Figure&nbsp;3: 20mph road injury collisions in Scotland, 2021–2025, against th
 <div id="fig-minorroadtraffic" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-minorroadtraffic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-b0fefe146c4a3835565f" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-b0fefe146c4a3835565f">{"x":{"visdat":{"a8a5144415b7":["function () ","plotlyVisDat"]},"cur_data":"a8a5144415b7","attrs":{"a8a5144415b7":{"x":{},"y":{},"marker":{"color":"#2a78d6"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","tickmode":"array","tickvals":[2021,2022,2023,2024]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"Traffic volume (million vehicle-km)"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":[2021,2022,2023,2024],"y":[15908,17009,17221,17633],"marker":{"color":"#2a78d6","line":{"color":"rgba(31,119,180,1)"}},"text":["15,908","17,009","17,221","17,633"],"textposition":["outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-be90e4603ec5ef6705bd" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-be90e4603ec5ef6705bd">{"x":{"visdat":{"ad9976e92c08":["function () ","plotlyVisDat"]},"cur_data":"ad9976e92c08","attrs":{"ad9976e92c08":{"x":{},"y":{},"marker":{"color":"#2a78d6"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","tickmode":"array","tickvals":[2021,2022,2023,2024]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"Traffic volume (million vehicle-km)"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":[2021,2022,2023,2024],"y":[15908,17009,17221,17633],"marker":{"color":"#2a78d6","line":{"color":"rgba(31,119,180,1)"}},"text":["15,908","17,009","17,221","17,633"],"textposition":["outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-minorroadtraffic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Traffic volume on minor roads (B, C and unclassified) in Scotland, 2021–2024
+Figure&nbsp;5: Traffic volume on minor roads (B, C and unclassified) in Scotland, 2021–2024
 </figcaption>
 </figure>
 </div>
@@ -264,11 +147,11 @@ Figure&nbsp;4: Traffic volume on minor roads (B, C and unclassified) in Scotland
 <div id="fig-minorksicount" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-minorksicount-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-6bac7fcd75050a9ab826" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-6bac7fcd75050a9ab826">{"x":{"visdat":{"a8a5216e811d":["function () ","plotlyVisDat"]},"cur_data":"a8a5216e811d","attrs":{"a8a5216e811d":{"x":{},"y":{},"marker":{"color":"#6b7278"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","tickmode":"array","tickvals":[2021,2022,2023,2024]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"KSI collisions"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":[2021,2022,2023,2024],"y":[744,793,878,871],"marker":{"color":"#6b7278","line":{"color":"rgba(31,119,180,1)"}},"text":[744,793,878,871],"textposition":["outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-49f534c7226101593780" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-49f534c7226101593780">{"x":{"visdat":{"ad9948cd35be":["function () ","plotlyVisDat"]},"cur_data":"ad9948cd35be","attrs":{"ad9948cd35be":{"x":{},"y":{},"marker":{"color":"#6b7278"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","tickmode":"array","tickvals":[2021,2022,2023,2024]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"KSI collisions"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":[2021,2022,2023,2024],"y":[744,793,878,871],"marker":{"color":"#6b7278","line":{"color":"rgba(31,119,180,1)"}},"text":[744,793,878,871],"textposition":["outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-minorksicount-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: KSI collisions on minor roads (B, C and unclassified) in Scotland, 2021–2024
+Figure&nbsp;6: KSI collisions on minor roads (B, C and unclassified) in Scotland, 2021–2024
 </figcaption>
 </figure>
 </div>
@@ -278,102 +161,16 @@ Figure&nbsp;5: KSI collisions on minor roads (B, C and unclassified) in Scotland
 <h3 class="anchored" data-anchor-id="a-realistic-conclusion">✅ A Realistic Conclusion</h3>
 <p>You may have noticed that I don’t have any data for 2025 above - that’s because I don’t have the traffic volume data for 2025 yet. This limits the scope of the conclusions we can make but it doesn’t mean we can’t learn something. Here’s the KSI collision rate corrected for traffic volume:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#| label: fig-minorksirate</span></span>
-<span id="cb2-2"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#| fig-cap: "KSI collisions per billion vehicle-km on minor roads in Scotland, 2021–2024"</span></span>
-<span id="cb2-3"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#| fig-alt: "Bar chart showing killed or seriously injured collisions on minor roads in Scotland, adjusted for traffic volume, per billion vehicle-kilometres, by year: 46.8 in 2021, 46.6 in 2022, 51.0 in 2023, and 49.4 in 2024."</span></span>
-<span id="cb2-4"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#| echo: false</span></span>
-<span id="cb2-5"></span>
-<span id="cb2-6"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">plot_ly</span>(</span>
-<span id="cb2-7">  ksi_minor, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">x =</span> <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">~</span>collision_year, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">y =</span> <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">~</span>ksi_per_billion_vkm,</span>
-<span id="cb2-8">  <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">type =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"bar"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">marker =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">list</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">color =</span> millburn_orange),</span>
-<span id="cb2-9">  <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">text =</span> <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">~</span>ksi_per_billion_vkm, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">textposition =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"outside"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">showlegend =</span> <span class="cn" style="color: #8f5902;
-background-color: null;
-font-style: inherit;">FALSE</span></span>
-<span id="cb2-10">) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">%&gt;%</span></span>
-<span id="cb2-11">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">plotly_theme</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">y_title =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"KSI per billion vehicle-km"</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">%&gt;%</span></span>
-<span id="cb2-12">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">layout</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">xaxis =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">list</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">gridcolor =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"#e0e6ea"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">zeroline =</span> <span class="cn" style="color: #8f5902;
-background-color: null;
-font-style: inherit;">FALSE</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">""</span>,</span>
-<span id="cb2-13">                       <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">tickmode =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"array"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">tickvals =</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2021</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2024</span>))</span></code></pre></div></div>
-<div class="cell-output-display">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-1e34b9ecd5ce213c8e8f" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-1e34b9ecd5ce213c8e8f">{"x":{"visdat":{"a8a55a68c78c":["function () ","plotlyVisDat"]},"cur_data":"a8a55a68c78c","attrs":{"a8a55a68c78c":{"x":{},"y":{},"marker":{"color":"#eb6834"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","tickmode":"array","tickvals":[2021,2022,2023,2024]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"KSI per billion vehicle-km"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":[2021,2022,2023,2024],"y":[46.799999999999997,46.600000000000001,51,49.399999999999999],"marker":{"color":"#eb6834","line":{"color":"rgba(31,119,180,1)"}},"text":[46.799999999999997,46.600000000000001,51,49.399999999999999],"textposition":["outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="fig-minorksirate" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-minorksirate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-36dc542b4b31cc69d71a" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-36dc542b4b31cc69d71a">{"x":{"visdat":{"ad9977e2960e":["function () ","plotlyVisDat"]},"cur_data":"ad9977e2960e","attrs":{"ad9977e2960e":{"x":{},"y":{},"marker":{"color":"#eb6834"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","tickmode":"array","tickvals":[2021,2022,2023,2024]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"KSI per billion vehicle-km"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":[2021,2022,2023,2024],"y":[46.799999999999997,46.600000000000001,51,49.399999999999999],"marker":{"color":"#eb6834","line":{"color":"rgba(31,119,180,1)"}},"text":[46.799999999999997,46.600000000000001,51,49.399999999999999],"textposition":["outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-minorksirate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: KSI collisions per billion vehicle-km on minor roads in Scotland, 2021–2024
+</figcaption>
+</figure>
 </div>
 </div>
 <p>There’s no clear trend on display here, but we can see that 2023 and 2024 have higher traffic-adjusted rates of KSI collisions than the preceding years. There’s nothing in this data that point to a cause for that rise but it’s there and it’s real. Here’s my attempt at a statistically defensible headline from that data:</p>
@@ -428,8 +225,8 @@ font-style: inherit;">2024</span>))</span></code></pre></div></div>
 <div id="fig-eastwest" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-eastwest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-66ac73dee0453e0c6978" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-66ac73dee0453e0c6978">{"x":{"visdat":{"a91169e4c13b":["function () ","plotlyVisDat"]},"cur_data":"a91169e4c13b","attrs":{"a91169e4c13b":{"x":{},"y":{},"mode":"lines+markers","line":{"width":2.5},"marker":{"size":5},"color":{},"colors":["#6b7278","#eb6834"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":""},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"Avg daily cycle count"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":["2022-01-01","2022-02-01","2022-03-01","2022-04-01","2022-05-01","2022-06-01","2022-07-01","2022-08-01","2022-09-01","2022-10-01","2022-11-01","2022-12-01","2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01","2025-01-01","2025-02-01","2025-03-01","2025-04-01","2025-05-01","2025-06-01","2025-07-01","2025-08-01","2025-09-01","2025-10-01","2025-11-01","2025-12-01","2026-01-01","2026-02-01","2026-03-01","2026-04-01","2026-05-01","2026-06-01"],"y":[74.258064516129039,93.428571428571431,85.193548387096769,83.066666666666663,80.193548387096769,116.76666666666667,133.58064516129033,134.06451612903226,118.53333333333333,54.032258064516128,45.06666666666667,35.096774193548384,37.677419354838712,39.25,41.677419354838712,54.333333333333329,65.096774193548384,56.799999999999997,60.774193548387096,56.064516129032256,58.06666666666667,44.612903225806448,41.600000000000001,31.35483870967742,30.225806451612904,35.96551724137931,50.645161290322584,53.13333333333334,61.806451612903224,56.266666666666666,54.064516129032256,58.193548387096776,55.06666666666667,44.322580645161288,40.833333333333329,29.774193548387096,16.741935483870968,19.071428571428573,21.29032258064516,28.133333333333336,24.642857142857142,23.071428571428573,26.899999999999999,28.833333333333332,26.888888888888889,21.464285714285715,20.285714285714285,17.482758620689655,13.357142857142856,17.5,18.310344827586206,17.222222222222221,28,22.800000000000001],"mode":"lines+markers","line":{"color":"rgba(107,114,120,1)","width":2.5},"marker":{"color":"rgba(107,114,120,1)","size":5,"line":{"color":"rgba(107,114,120,1)"}},"type":"scatter","name":"Eastward","textfont":{"color":"rgba(107,114,120,1)"},"error_y":{"color":"rgba(107,114,120,1)"},"error_x":{"color":"rgba(107,114,120,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2022-01-01","2022-02-01","2022-03-01","2022-04-01","2022-05-01","2022-06-01","2022-07-01","2022-08-01","2022-09-01","2022-10-01","2022-11-01","2022-12-01","2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01","2025-01-01","2025-02-01","2025-03-01","2025-04-01","2025-05-01","2025-06-01","2025-07-01","2025-08-01","2025-09-01","2025-10-01","2025-11-01","2025-12-01","2026-01-01","2026-02-01","2026-03-01","2026-04-01","2026-05-01","2026-06-01"],"y":[465.90322580645159,447.14285714285717,599.06451612903231,567.16666666666663,692.0322580645161,788.5,718.09677419354841,817.70967741935488,813.20000000000005,529.19354838709683,497.69999999999999,290.90322580645159,298.77419354838707,380.75,400.51612903225805,470.36666666666667,534.32258064516134,582.76666666666665,489.22580645161293,550.16129032258061,577.86666666666667,479.90322580645159,444.43333333333334,340.51612903225805,280.16129032258067,349.58620689655174,397.12903225806451,426.93333333333328,471.58064516129031,452,434.51612903225805,468.48387096774195,459.46666666666664,411.03225806451616,345.80000000000001,75.225806451612883,0,0,175.73333333333332,241.65517241379311,245.76666666666668,235.41379310344828,241.36666666666667,237.61290322580646,252.69230769230768,205.38461538461539,179.21428571428572,142.25,123.85714285714285,157.11111111111111,172.31034482758622,169.75,218.55555555555554,205.06666666666666],"mode":"lines+markers","line":{"color":"rgba(235,104,52,1)","width":2.5},"marker":{"color":"rgba(235,104,52,1)","size":5,"line":{"color":"rgba(235,104,52,1)"}},"type":"scatter","name":"Westward","textfont":{"color":"rgba(235,104,52,1)"},"error_y":{"color":"rgba(235,104,52,1)"},"error_x":{"color":"rgba(235,104,52,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-8c2735c5ec5d018c64cc" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-8c2735c5ec5d018c64cc">{"x":{"visdat":{"adf55bdc916e":["function () ","plotlyVisDat"]},"cur_data":"adf55bdc916e","attrs":{"adf55bdc916e":{"x":{},"y":{},"mode":"lines+markers","line":{"width":2.5},"marker":{"size":5},"color":{},"colors":["#6b7278","#eb6834"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":""},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"Avg daily cycle count"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":["2022-01-01","2022-02-01","2022-03-01","2022-04-01","2022-05-01","2022-06-01","2022-07-01","2022-08-01","2022-09-01","2022-10-01","2022-11-01","2022-12-01","2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01","2025-01-01","2025-02-01","2025-03-01","2025-04-01","2025-05-01","2025-06-01","2025-07-01","2025-08-01","2025-09-01","2025-10-01","2025-11-01","2025-12-01","2026-01-01","2026-02-01","2026-03-01","2026-04-01","2026-05-01","2026-06-01"],"y":[74.258064516129039,93.428571428571431,85.193548387096769,83.066666666666663,80.193548387096769,116.76666666666667,133.58064516129033,134.06451612903226,118.53333333333333,54.032258064516128,45.06666666666667,35.096774193548384,37.677419354838712,39.25,41.677419354838712,54.333333333333329,65.096774193548384,56.799999999999997,60.774193548387096,56.064516129032256,58.06666666666667,44.612903225806448,41.600000000000001,31.35483870967742,30.225806451612904,35.96551724137931,50.645161290322584,53.13333333333334,61.806451612903224,56.266666666666666,54.064516129032256,58.193548387096776,55.06666666666667,44.322580645161288,40.833333333333329,29.774193548387096,16.741935483870968,19.071428571428573,21.29032258064516,28.133333333333336,24.642857142857142,23.071428571428573,26.899999999999999,28.833333333333332,26.888888888888889,21.464285714285715,20.285714285714285,17.482758620689655,13.357142857142856,17.5,18.310344827586206,17.222222222222221,28,22.800000000000001],"mode":"lines+markers","line":{"color":"rgba(107,114,120,1)","width":2.5},"marker":{"color":"rgba(107,114,120,1)","size":5,"line":{"color":"rgba(107,114,120,1)"}},"type":"scatter","name":"Eastward","textfont":{"color":"rgba(107,114,120,1)"},"error_y":{"color":"rgba(107,114,120,1)"},"error_x":{"color":"rgba(107,114,120,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2022-01-01","2022-02-01","2022-03-01","2022-04-01","2022-05-01","2022-06-01","2022-07-01","2022-08-01","2022-09-01","2022-10-01","2022-11-01","2022-12-01","2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01","2025-01-01","2025-02-01","2025-03-01","2025-04-01","2025-05-01","2025-06-01","2025-07-01","2025-08-01","2025-09-01","2025-10-01","2025-11-01","2025-12-01","2026-01-01","2026-02-01","2026-03-01","2026-04-01","2026-05-01","2026-06-01"],"y":[465.90322580645159,447.14285714285717,599.06451612903231,567.16666666666663,692.0322580645161,788.5,718.09677419354841,817.70967741935488,813.20000000000005,529.19354838709683,497.69999999999999,290.90322580645159,298.77419354838707,380.75,400.51612903225805,470.36666666666667,534.32258064516134,582.76666666666665,489.22580645161293,550.16129032258061,577.86666666666667,479.90322580645159,444.43333333333334,340.51612903225805,280.16129032258067,349.58620689655174,397.12903225806451,426.93333333333328,471.58064516129031,452,434.51612903225805,468.48387096774195,459.46666666666664,411.03225806451616,345.80000000000001,75.225806451612883,0,0,175.73333333333332,241.65517241379311,245.76666666666668,235.41379310344828,241.36666666666667,237.61290322580646,252.69230769230768,205.38461538461539,179.21428571428572,142.25,123.85714285714285,157.11111111111111,172.31034482758622,169.75,218.55555555555554,205.06666666666666],"mode":"lines+markers","line":{"color":"rgba(235,104,52,1)","width":2.5},"marker":{"color":"rgba(235,104,52,1)","size":5,"line":{"color":"rgba(235,104,52,1)"}},"type":"scatter","name":"Westward","textfont":{"color":"rgba(235,104,52,1)"},"error_y":{"color":"rgba(235,104,52,1)"},"error_x":{"color":"rgba(235,104,52,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eastwest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Average daily cycle counts on Millburn Road by direction, 2022–2026
@@ -453,25 +250,6 @@ Figure&nbsp;1: Average daily cycle counts on Millburn Road by direction, 2022–
   <category>case-study</category>
   <category>data</category>
   <guid>https://themodeshift.scot/posts/2026-09-04-inverness-data/</guid>
-  <pubDate>Thu, 03 Sep 2026 23:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Millburn Road - The Data</title>
-  <link>https://themodeshift.scot/posts/2026-09-08-millburn-volume analysis/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>Now we’ve got some <a href="https://themodeshift.scot/posts/2026-09-04-inverness-data/">data</a> lets see</p>
-
-
-
- ]]></description>
-  <category>infrastructure</category>
-  <category>case-study</category>
-  <category>data</category>
-  <guid>https://themodeshift.scot/posts/2026-09-08-millburn-volume analysis/</guid>
   <pubDate>Thu, 03 Sep 2026 23:00:00 GMT</pubDate>
 </item>
 <item>

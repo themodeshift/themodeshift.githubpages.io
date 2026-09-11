@@ -96,7 +96,6 @@ plot_ly(
 You may have noticed that the values for 30mph roads and 60mph roads aren't referenced in the articles. Lets pull them out and add them to the graph:
 
 ```{r}
-
 #| label: fig-allspeedlimits
 #| fig-cap: "2025 injury collisions in Scotland by speed limit"
 #| fig-alt: "Bar chart showing injury collision counts for all six speed limits in Scotland in 2025: 20mph, 30mph, 40mph, 50mph, 60mph and 70mph. 30mph has the highest count at 1,729, followed by 60mph at 1,118. 20mph, at 570, is third highest, well below both."
@@ -291,7 +290,6 @@ plot_ly(
 You may have noticed that I don't have any data for 2025 above - that's because I don't have the traffic volume data for 2025 yet. This limits the scope of the conclusions we can make but it doesn't mean we can't learn something. Here's the KSI collision rate corrected for traffic volume:
 
 ```{r}
-
 #| label: fig-minorksirate
 #| fig-cap: "KSI collisions per billion vehicle-km on minor roads in Scotland, 2021–2024"
 #| fig-alt: "Bar chart showing killed or seriously injured collisions on minor roads in Scotland, adjusted for traffic volume, per billion vehicle-kilometres, by year: 46.8 in 2021, 46.6 in 2022, 51.0 in 2023, and 49.4 in 2024."
