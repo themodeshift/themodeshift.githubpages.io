@@ -1,0 +1,427 @@
+---
+title: "Millburn Road - Cycling Volume Analysis"
+date: 2026-09-12
+categories: [infrastructure, case-study, data, Millburn-Rd]
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(plotly)
+library(lubridate)
+library(here)
+
+# --- Load data -----------------------------------------------------------
+# Paths are relative to the project root (themodeshift-scot/), found automatically
+# by here() regardless of where this .qmd file lives in the project.
+# Expects: themodeshift-scot/data/traffic_counts_inverness.csv
+traffic_counts_inverness <- read_csv(here("data", "traffic_counts_inverness.csv"))
+
+# shared plotly styling to match the site's light blue/white theme
+plotly_theme <- function(p, y_title = NULL) {
+  p %>%
+    layout(
+      paper_bgcolor = "rgba(0,0,0,0)",
+      plot_bgcolor  = "rgba(0,0,0,0)",
+      font  = list(color = "#1a1a1a", family = "Helvetica, Arial, sans-serif", size = 12),
+      xaxis = list(gridcolor = "#e0e6ea", zeroline = FALSE, title = ""),
+      yaxis = list(gridcolor = "#e0e6ea", zeroline = FALSE, title = y_title),
+      legend = list(orientation = "h", y = -0.2),
+      margin = list(l = 60, r = 20, t = 10, b = 40)
+    ) %>%
+    config(displaylogo = FALSE)
+}
+
+millburn_orange <- "#eb6834"
+accent_blue     <- "#2a78d6"
+accent_green    <- "#1baf7a"
+muted_gray      <- "#6b7278"
+```
+
+This is the third in a series of posts about a cycle lane in Millburn Road, Inverness. The previous post, detailing where we're getting the data from can be found [here](https://themodeshift.scot/posts/2026-09-04-inverness-data/).
+
+## What data are we looking at?
+
+I've decided to concentrate on the main entry points and routes through the city. There's a continuous counter placed anywhere you see this icon ![](count_icon.png){height="1.2em"} on the map below[^1]:
+
+[^1]: The other icons visible on the map count periodic, not continuous data.
+
+![Image taken from Cycling Scotland Open Data portal (usmart.io)](usmart-screenshot-inverness-centre.png){fig-alt="A map zoomed in on Inverness city centre on which several traffic counters are marked." fig-align="center" width="70%"}
+
+This gives counts at the following locations:
+
+:::::: columns
+::: {.column width="33%"}
+- Millburn Road
+- Ness Walk
+- Greig Street
+:::
+
+::: {.column width="33%"}
+- Huntly Street
+- Academy Street
+- Crown Road
+:::
+
+::: {.column width="33%"}
+- Bank Street
+- Bridge Street
+- Castle Road
+:::
+::::::
+
+Both Millburn Road and Academy Street have two counters each, one for eastbound and one for westbound traffic. Since this analysis isn't interested in the directional distinction, they have been combined into one count for each street.
+
+## Cycling volume history
+
+The first number we want to look at is just how busy each counter is with cycle traffic. @fig-volume shows all of the cycle traffic volume data since collection started in March 2021. Millburn Road is highlighted orange, and you can mouse over the other lines to see which counter they correspond to.
+
+```{r}
+#| label: fig-volume
+#| fig-cap: "Average daily cycle counts by road, 2021–2026"
+#| fig-alt: "Line chart comparing average daily cycling volumes across nine roads in Inverness over time, with Millburn Road highlighted"
+#| echo: false
+
+site_map <- tibble(
+  siteID = c("HLD002", "HLD011", "HLD005", "HLD009", "HLD001",
+             "HLD027", "HLD028", "HLD029", "HLD020", "HLD021", "HLD022"),
+  road_group = c("Millburn Road", "Millburn Road", "Ness Walk",
+                 "Greig Street", "Huntly Street",
+                 "Academy Street", "Academy Street", "Crown Road",
+                 "Bank Street", "Bridge Street", "Castle Road")
+)
+
+volume_data <- traffic_counts_inverness %>%
+  filter(siteID %in% site_map$siteID, class == "cycle") %>%
+  left_join(site_map, by = "siteID") %>%
+  mutate(date = as.Date(startTime)) %>%
+  group_by(road_group, date) %>%
+  summarise(daily_cycle_count = sum(count), .groups = "drop") %>%
+  group_by(road_group, month = floor_date(date, "month")) %>%
+  summarise(avg_daily_cycle_count = mean(daily_cycle_count, na.rm = TRUE), .groups = "drop")
+
+road_colors <- c(
+    "Millburn Road"  = millburn_orange,
+    "Ness Walk"      = "#3d6b8a",  # steel blue
+    "Greig Street"   = "#4a8a5f",  # forest green
+    "Huntly Street"  = "#b08a3d",  # ochre
+    "Academy Street" = "#7d5a9e",  # muted violet
+    "Crown Road"     = "#a14f4f",  # brick red
+    "Bank Street"    = "#3d8a8a",  # teal
+    "Bridge Street"  = "#8a7a2e",  # olive
+    "Castle Road"    = "#6b6b6b"   # neutral grey
+  )
+
+
+p_volume <- plot_ly()
+
+for (rg in names(road_colors)) {
+  d <- filter(volume_data, road_group == rg)
+  p_volume <- p_volume %>%
+    add_trace(
+      data = d, x = ~month, y = ~avg_daily_cycle_count,
+      name = rg, type = "scatter", mode = "lines",
+      line = list(color = road_colors[[rg]],
+                  width = if (rg == "Millburn Road") 3.5 else 1.5)
+    )
+}
+
+p_volume %>% plotly_theme(y_title = "Avg daily cycle count")
+```
+
+A couple of things stand out on the chart before we address Millburn Road. The first is that the data in the 2021-2022 period looks quite messy. I think it's reasonable to say that the travel patterns in the early post-pandemic years is sufficiently different to where we are now to give that data a separate look another time.
+
+The second thing is the steep drop in counts at all sites in the winter 2024/25 period. I don't know enough yet to explain it, but I do want to say I'm working on figuring it out and will publish what I find. It's worth noting that cycle traffic appears to be overall lower after this blip. Until I know more about whether that's real or an artefact of data collection, I'll refrain from commenting on any trends over time.
+
+@fig-volume-2023 shows the data starting in January 2023:
+
+```{r}
+#| label: fig-volume-2023
+#| fig-cap: "Average daily cycle counts by road, 2023–2026"
+#| fig-alt: "Line chart comparing average daily cycling volumes across nine roads in Inverness from 2023 onward, with Millburn Road highlighted"
+#| echo: false
+
+site_map <- tibble(
+  siteID = c("HLD002", "HLD011", "HLD005", "HLD009", "HLD001",
+             "HLD027", "HLD028", "HLD029", "HLD020", "HLD021", "HLD022"),
+  road_group = c("Millburn Road", "Millburn Road", "Ness Walk",
+                 "Greig Street", "Huntly Street",
+                 "Academy Street", "Academy Street", "Crown Road",
+                 "Bank Street", "Bridge Street", "Castle Road")
+)
+
+volume_data <- traffic_counts_inverness %>%
+  filter(siteID %in% site_map$siteID, class == "cycle") %>%
+  left_join(site_map, by = "siteID") %>%
+  mutate(date = as.Date(startTime)) %>%
+  filter(date >= as.Date("2023-01-01")) %>%
+  group_by(road_group, date) %>%
+  summarise(daily_cycle_count = sum(count), .groups = "drop") %>%
+  group_by(road_group, month = floor_date(date, "month")) %>%
+  summarise(avg_daily_cycle_count = mean(daily_cycle_count, na.rm = TRUE), .groups = "drop")
+
+road_colors <- c(
+    "Millburn Road"  = millburn_orange,
+    "Ness Walk"      = "#3d6b8a",  # steel blue
+    "Greig Street"   = "#4a8a5f",  # forest green
+    "Huntly Street"  = "#b08a3d",  # ochre
+    "Academy Street" = "#7d5a9e",  # muted violet
+    "Crown Road"     = "#a14f4f",  # brick red
+    "Bank Street"    = "#3d8a8a",  # teal
+    "Bridge Street"  = "#8a7a2e",  # olive
+    "Castle Road"    = "#6b6b6b"   # neutral grey
+  )
+
+p_volume_2023 <- plot_ly()
+
+for (rg in names(road_colors)) {
+  d <- filter(volume_data, road_group == rg)
+  p_volume_2023 <- p_volume_2023 %>%
+    add_trace(
+      data = d, x = ~month, y = ~avg_daily_cycle_count,
+      name = rg, type = "scatter", mode = "lines",
+      line = list(color = road_colors[[rg]],
+                  width = if (rg == "Millburn Road") 3.5 else 1.5)
+    )
+}
+
+p_volume_2023 %>% plotly_theme(y_title = "Avg daily cycle count")
+
+```
+
+It's clear that the Millburn Road counter has consistently been among the highest counts in the city. Other sites with similarly high cycling volume are Huntly Street (coloured ochre) and Ness Walk (coloured blue). The significant dip in volume in 2023/24 on Ness Walk was caused by its closure to upgrade the cycling infrastructure there (yay!).
+
+Since 2025 is the most recent full year for which we have data[^2], the median count at each site in that year also gives a useful picture.
+
+[^2]: This year also avoids any major changes to the infrastructure layout at each site.
+
+```{r}
+#| label: tbl-mediancounts
+#| tbl-cap: "Median daily cycle counts by road, 2025"
+#| echo: false
+
+median_cycle_2025 <- traffic_counts_inverness %>%
+  filter(class == "cycle", siteID %in% site_map$siteID) %>%
+  left_join(site_map, by = "siteID") %>%
+  mutate(
+    date = as.Date(startTime),
+    year = year(date)
+  ) %>%
+  # restrict to 2025 only
+  filter(year == 2025) %>%
+  # collapse hourly rows into one total per road per day
+  group_by(road_group, date) %>%
+  summarise(daily_cycle_count = sum(count), .groups = "drop") %>%
+  # median (not mean) daily count per road across 2025 - robust to one-off
+  # event spikes, e.g. the Etape Loch Ness effect seen on Dores Road
+  group_by(road_group) %>%
+  summarise(
+    median_daily_cycle_count = median(daily_cycle_count, na.rm = TRUE),
+    n_days = n(),  # how many days of data went into this median - low counts
+                    # here mean thinner/less reliable coverage for that road
+    .groups = "drop"
+  ) %>%
+  arrange(desc(median_daily_cycle_count))
+
+# render as a styled table, with Millburn Road's row picked out to match
+# the colour scheme used in the other charts
+median_cycle_2025 %>%
+  gt::gt() %>%
+  gt::cols_label(
+    road_group = "Location",
+    median_daily_cycle_count = "Median daily cycle count",
+    n_days = "Days with data"
+  ) %>%
+  gt::fmt_number(columns = median_daily_cycle_count, decimals = 0) %>%
+  gt::data_color(
+    columns = road_group,
+    fn = function(x) if_else(x == "Millburn Road", millburn_orange, "#8a9096")
+  )
+```
+
+This is a clearer way to show the main takeaway from this data: Millburn Road is, realtive to the rest of the city centre, busy with bicycles.
+
+## The Mode ~~Shift~~ Share
+
+A really important measure when looking at any mode of transport is its share of the overall traffic in the data. Mode share (sometimes called modal share) is the kind of measure you could name a blog after.
+
+@fig-modeshare-2023 and @tbl-medianmodeshare show the mode share companions to our volume data:
+
+```{r}
+#| label: fig-modeshare-2023
+#| fig-cap: "Cycling mode share by road, 2023–2026"
+#| fig-alt: "Line chart comparing cycling's share of total traffic across nine roads in Inverness from 2023 onward, with Millburn Road highlighted"
+#| echo: false
+
+site_map <- tibble(
+  siteID = c("HLD002", "HLD011", "HLD005", "HLD009", "HLD001",
+             "HLD027", "HLD028", "HLD029", "HLD020", "HLD021", "HLD022"),
+  road_group = c("Millburn Road", "Millburn Road", "Ness Walk",
+                 "Greig Street", "Huntly Street",
+                 "Academy Street", "Academy Street", "Crown Road",
+                 "Bank Street", "Bridge Street", "Castle Road")
+)
+
+modeshare_data <- traffic_counts_inverness %>%
+  filter(siteID %in% site_map$siteID) %>%
+  left_join(site_map, by = "siteID") %>%
+  mutate(date = as.Date(startTime)) %>%
+  filter(date >= as.Date("2023-01-01")) %>%
+  # total counts per road per day, split by whether the row is a cycle count
+  group_by(road_group, date) %>%
+  summarise(
+    cycle_count = sum(count[class == "cycle"]),
+    total_count = sum(count),
+    .groups = "drop"
+  ) %>%
+  group_by(road_group, month = floor_date(date, "month")) %>%
+  summarise(
+    cycle_count = sum(cycle_count),
+    total_count = sum(total_count),
+    .groups = "drop"
+  ) %>%
+  mutate(cycle_mode_share = cycle_count / total_count * 100)
+
+road_colors <- c(
+    "Millburn Road"  = millburn_orange,
+    "Ness Walk"      = "#3d6b8a",  # steel blue
+    "Greig Street"   = "#4a8a5f",  # forest green
+    "Huntly Street"  = "#b08a3d",  # ochre
+    "Academy Street" = "#7d5a9e",  # muted violet
+    "Crown Road"     = "#a14f4f",  # brick red
+    "Bank Street"    = "#3d8a8a",  # teal
+    "Bridge Street"  = "#8a7a2e",  # olive
+    "Castle Road"    = "#6b6b6b"   # neutral grey
+  )
+
+p_modeshare_2023 <- plot_ly()
+
+for (rg in names(road_colors)) {
+  d <- filter(modeshare_data, road_group == rg)
+  p_modeshare_2023 <- p_modeshare_2023 %>%
+    add_trace(
+      data = d, x = ~month, y = ~cycle_mode_share,
+      name = rg, type = "scatter", mode = "lines",
+      line = list(color = road_colors[[rg]],
+                  width = if (rg == "Millburn Road") 3.5 else 1.5)
+    )
+}
+
+p_modeshare_2023 %>% plotly_theme(y_title = "Cycling mode share (%)")
+```
+
+```{r}
+#| label: tbl-medianmodeshare
+#| tbl-cap: "Median daily cycling mode share by road, 2025"
+#| echo: false
+
+median_modeshare_2025 <- traffic_counts_inverness %>%
+  filter(siteID %in% site_map$siteID) %>%
+  left_join(site_map, by = "siteID") %>%
+  mutate(
+    date = as.Date(startTime),
+    year = year(date)
+  ) %>%
+  filter(year == 2025) %>%
+  # daily cycle count and daily total count per road
+  group_by(road_group, date) %>%
+  summarise(
+    cycle_count = sum(count[class == "cycle"]),
+    total_count = sum(count),
+    .groups = "drop"
+  ) %>%
+  mutate(daily_mode_share = cycle_count / total_count * 100) %>%
+  # median (not mean) daily mode share per road across 2025 - robust to
+  # one-off event spikes in either cycling or overall traffic
+  group_by(road_group) %>%
+  summarise(
+    median_daily_mode_share = median(daily_mode_share, na.rm = TRUE),
+    n_days = n(),  # how many days of data went into this median - low counts
+                    # here mean thinner/less reliable coverage for that road
+    .groups = "drop"
+  ) %>%
+  arrange(desc(median_daily_mode_share))
+
+median_modeshare_2025 %>%
+  gt::gt() %>%
+  gt::cols_label(
+    road_group = "Location",
+    median_daily_mode_share = "Median daily cycling mode share",
+    n_days = "Days with data"
+  ) %>%
+  gt::fmt_number(columns = median_daily_mode_share, decimals = 1, pattern = "{x}%") %>%
+  gt::data_color(
+    columns = road_group,
+    fn = function(x) if_else(x == "Millburn Road", millburn_orange, "#8a9096")
+  )
+```
+
+You may have had the same initial gut instinct as me - yikes. Millburn Road plummets down the table to nestle between Castle Road and Bank Street, neither of which is a big hitter in the cycle volume league above. Millburn's previous contenders, Ness Walk and Huntly street stay at the top of the charts, with their mode share towering above all others.
+
+However, if we take the raw volume into account as well as the mode share it actually highlights Millburn Road as being uniquely *good* at getting bikes through. Ness Walk and Huntly Street have high cycle volumes and high mode shares in part because relative to the other sites they have low numbers of motor vehicles. Millburn Road carries a similar volume of cyclists but with much more motor traffic. This is really clear to see if we look at the motor vehicle counts as well:
+
+```{r}
+#| label: tbl-mediancomparison
+#| tbl-cap: "Median daily cycle count, motor traffic count, and cycling mode share by road, 2025"
+#| echo: false
+
+median_motor_2025 <- traffic_counts_inverness %>%
+  filter(siteID %in% site_map$siteID,
+         class %in% c("mcycle", "car_or_taxi", "bus_or_coach", "goods_vehicle")) %>%
+  left_join(site_map, by = "siteID") %>%
+  filter(road_group %in% c("Millburn Road", "Ness Walk", "Huntly Street")) %>%
+  mutate(
+    date = as.Date(startTime),
+    year = year(date)
+  ) %>%
+  filter(year == 2025) %>%
+  group_by(road_group, date) %>%
+  summarise(daily_motor_count = sum(count), .groups = "drop") %>%
+  group_by(road_group) %>%
+  summarise(
+    median_daily_motor_count = median(daily_motor_count, na.rm = TRUE),
+    n_days = n(),
+    .groups = "drop"
+  ) %>%
+  arrange(desc(median_daily_motor_count))
+
+median_comparison_2025 <- median_cycle_2025 %>%
+  filter(road_group %in% c("Millburn Road", "Ness Walk", "Huntly Street")) %>%
+  select(road_group, median_daily_cycle_count) %>%
+  left_join(
+    median_motor_2025 %>% select(road_group, median_daily_motor_count, n_days),
+    by = "road_group"
+  ) %>%
+  left_join(
+    median_modeshare_2025 %>% select(road_group, median_daily_mode_share),
+    by = "road_group"
+  ) %>%
+  arrange(desc(median_daily_motor_count))
+
+median_comparison_2025 %>%
+  gt::gt() %>%
+  gt::cols_label(
+    road_group = "Location",
+    median_daily_cycle_count = "Median daily cycle count",
+    median_daily_motor_count = "Median daily motor count",
+    median_daily_mode_share = "Cycling mode share",
+    n_days = "Days with data"
+  ) %>%
+  gt::fmt_number(columns = c(median_daily_cycle_count, median_daily_motor_count), decimals = 0) %>%
+  gt::fmt_number(columns = median_daily_mode_share, decimals = 1, pattern = "{x}%") %>%
+  gt::data_color(
+    columns = road_group,
+    fn = function(x) if_else(x == "Millburn Road", millburn_orange, "#8a9096")
+  )
+```
+
+Cyclists on Millburn road are typically coexisting with a volume of motor traffic that is an order of magnitude bigger than comparable sites in the city.
+
+## Conclusion
+
+It's fairly clear that historically, Millburn Road is unique within Inverness city centre for its ability to transport large numbers of cyclists alongside heavy motor traffic. This in itself is not entirely surprising as it contained the only section of segregated cycle lane next to a busy road in the city but it does highlight the importance of that lane.
+
+To me, this makes the Highland Council's decision to remove a section of it right at the most complex junction seem to go against their stated vision [to make active travel an attractive and realistic choice for more
+people, more often, for more of their everyday journeys](https://www.highland.gov.uk/downloads/file/857/active-travel-strategy-2024-2030). I hope they will take a good look at this data as they plan for how they will move forward at that site. I think it makes a good case for improving and indeed extending the cycle lane along that corridor to enable even more people to arrive in the city by bicycle.

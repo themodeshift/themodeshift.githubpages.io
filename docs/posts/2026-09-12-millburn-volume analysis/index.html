@@ -1,31 +1,167 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
-      xmlns:media="http://search.yahoo.com/mrss/" 
-      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-      xmlns:dc="http://purl.org/dc/elements/1.1/" 
-      version="2.0">
-<channel>
-<title>The Mode Shift</title>
-<link>https://themodeshift.scot/</link>
-<atom:link href="https://themodeshift.scot/index.xml" rel="self" type="application/rss+xml"/>
-<description></description>
-<generator>quarto-1.10.18</generator>
-<lastBuildDate>Fri, 11 Sep 2026 23:00:00 GMT</lastBuildDate>
-<item>
-  <title>Millburn Road - Cycling Volume Analysis</title>
-  <link>https://themodeshift.scot/posts/2026-09-12-millburn-volume analysis/</link>
-  <description><![CDATA[ 
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-09-12">
+
+<title>Millburn Road - Cycling Volume Analysis – The Mode Shift</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
 
 
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-b5dded60250125ba9efb8312d6c535b0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="../../site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="../../site_libs/plotly-binding-4.12.1/plotly.js"></script>
+<script src="../../site_libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="../../site_libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="../../site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+<script src="../../site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+<link href="../../site_libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="../../site_libs/plotly-main-2.25.2/plotly-latest.min.js"></script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">The Mode Shift</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Millburn Road - Cycling Volume Analysis</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">infrastructure</div>
+    <div class="quarto-category">case-study</div>
+    <div class="quarto-category">data</div>
+    <div class="quarto-category">Millburn-Rd</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 12, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <p>This is the third in a series of posts about a cycle lane in Millburn Road, Inverness. The previous post, detailing where we’re getting the data from can be found <a href="https://themodeshift.scot/posts/2026-09-04-inverness-data/">here</a>.</p>
 <section id="what-data-are-we-looking-at" class="level2">
 <h2 class="anchored" data-anchor-id="what-data-are-we-looking-at">What data are we looking at?</h2>
-<p>I’ve decided to concentrate on the main entry points and routes through the city. There’s a continuous counter placed anywhere you see this icon <img src="https://themodeshift.scot/posts/2026-09-12-millburn-volume analysis/count_icon.png" style="height:1.2em"> on the map below<sup>1</sup>:</p>
+<p>I’ve decided to concentrate on the main entry points and routes through the city. There’s a continuous counter placed anywhere you see this icon <img src="count_icon.png" style="height:1.2em"> on the map below<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://themodeshift.scot/posts/2026-09-12-millburn-volume analysis/usmart-screenshot-inverness-centre.png" class="img-fluid figure-img" style="width:70.0%" alt="A map zoomed in on Inverness city centre on which several traffic counters are marked."></p>
+<p><img src="usmart-screenshot-inverness-centre.png" class="img-fluid figure-img" style="width:70.0%" alt="A map zoomed in on Inverness city centre on which several traffic counters are marked."></p>
 <figcaption>Image taken from Cycling Scotland Open Data portal (usmart.io)</figcaption>
 </figure>
 </div>
@@ -55,7 +191,7 @@
 </section>
 <section id="cycling-volume-history" class="level2">
 <h2 class="anchored" data-anchor-id="cycling-volume-history">Cycling volume history</h2>
-<p>The first number we want to look at is just how busy each counter is with cycle traffic. Figure&nbsp;1 shows all of the cycle traffic volume data since collection started in March 2021. Millburn Road is highlighted orange, and you can mouse over the other lines to see which counter they correspond to.</p>
+<p>The first number we want to look at is just how busy each counter is with cycle traffic. <a href="#fig-volume" class="quarto-xref">Figure&nbsp;1</a> shows all of the cycle traffic volume data since collection started in March 2021. Millburn Road is highlighted orange, and you can mouse over the other lines to see which counter they correspond to.</p>
 <div class="cell">
 <div id="fig-volume" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -71,7 +207,7 @@ Figure&nbsp;1: Average daily cycle counts by road, 2021–2026
 </div>
 <p>A couple of things stand out on the chart before we address Millburn Road. The first is that the data in the 2021-2022 period looks quite messy. I think it’s reasonable to say that the travel patterns in the early post-pandemic years is sufficiently different to where we are now to give that data a separate look another time.</p>
 <p>The second thing is the steep drop in counts at all sites in the winter 2024/25 period. I don’t know enough yet to explain it, but I do want to say I’m working on figuring it out and will publish what I find. It’s worth noting that cycle traffic appears to be overall lower after this blip. Until I know more about whether that’s real or an artefact of data collection, I’ll refrain from commenting on any trends over time.</p>
-<p>Figure&nbsp;2 shows the data starting in January 2023:</p>
+<p><a href="#fig-volume-2023" class="quarto-xref">Figure&nbsp;2</a> shows the data starting in January 2023:</p>
 <div class="cell">
 <div id="fig-volume-2023" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -86,7 +222,7 @@ Figure&nbsp;2: Average daily cycle counts by road, 2023–2026
 </div>
 </div>
 <p>It’s clear that the Millburn Road counter has consistently been among the highest counts in the city. Other sites with similarly high cycling volume are Huntly Street (coloured ochre) and Ness Walk (coloured blue). The significant dip in volume in 2023/24 on Ness Walk was caused by its closure to upgrade the cycling infrastructure there (yay!).</p>
-<p>Since 2025 is the most recent full year for which we have data<sup>2</sup>, the median count at each site in that year also gives a useful picture.</p>
+<p>Since 2025 is the most recent full year for which we have data<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, the median count at each site in that year also gives a useful picture.</p>
 <div class="cell">
 <div id="tbl-mediancounts" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -613,7 +749,7 @@ Table&nbsp;1: Median daily cycle counts by road, 2025
 <section id="the-mode-shift-share" class="level2">
 <h2 class="anchored" data-anchor-id="the-mode-shift-share">The Mode <del>Shift</del> Share</h2>
 <p>A really important measure when looking at any mode of transport is its share of the overall traffic in the data. Mode share (sometimes called modal share) is the kind of measure you could name a blog after.</p>
-<p>Figure&nbsp;3 and Table&nbsp;2 show the mode share companions to our volume data:</p>
+<p><a href="#fig-modeshare-2023" class="quarto-xref">Figure&nbsp;3</a> and <a href="#tbl-medianmodeshare" class="quarto-xref">Table&nbsp;2</a> show the mode share companions to our volume data:</p>
 <div class="cell">
 <div id="fig-modeshare-2023" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1660,319 +1796,416 @@ Table&nbsp;3: Median daily cycle count, motor traffic count, and cycling mode sh
 </section>
 
 
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>The other icons visible on the map count periodic, not continuous data.↩︎</p></li>
-<li id="fn2"><p>This year also avoids any major changes to the infrastructure layout at each site.↩︎</p></li>
+<li id="fn1"><p>The other icons visible on the map count periodic, not continuous data.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>This year also avoids any major changes to the infrastructure layout at each site.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section></div> ]]></description>
-  <category>infrastructure</category>
-  <category>case-study</category>
-  <category>data</category>
-  <category>Millburn-Rd</category>
-  <guid>https://themodeshift.scot/posts/2026-09-12-millburn-volume analysis/</guid>
-  <pubDate>Fri, 11 Sep 2026 23:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Inverness Courier - Bad 20mph Stats</title>
-  <link>https://themodeshift.scot/posts/2026-09-10-courier-20mph-article/</link>
-  <description><![CDATA[ 
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/themodeshift\.scot");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
 
 
 
 
-<p><a href="https://www.inverness-courier.co.uk/news/20mph-speed-limit-branded-ploy-against-drivers-as-collisio-444540/">This article in the Inverness Courier</a> was brought to my attention and it immediately brought up some statistical red flags. Road safety is an important factor in active travel and I feel it’s important to challenge bad stats when we see them. I’ve written directly to the Courier as well as the MSP quoted in the article, Tim Eagle, with some of my objections but I’d like to go into more detail here.</p>
-<p>The article suggests that the Scottish Governments expansion of 20mph speed limits on its road networks is not successful because of a slight rise in road traffic collisions in 20mph zones in 2025. Here I’m going to list my red flags and explain in detail why this article should not be taken seriously.</p>
-<section id="no-link-to-the-data-source." class="level3">
-<h3 class="anchored" data-anchor-id="no-link-to-the-data-source.">🚩 No link to the data source.</h3>
-<p>The article states:</p>
-<blockquote class="blockquote">
-<p>New figures released by the Scottish Government show 570 collisions on 20mph roads across Scotland ended in injury last year.</p>
-</blockquote>
-<p>Given the lack of a link in the article to the source of data, one would hope that typing “Scottish Government road collision statistics” into your favourite search engine would get you on the way. Unfortunately, what you’ll find is <a href="https://www.transport.gov.scot/publication/key-reported-road-casualties-scotland-2025/">Transport Scotland’s Road Casualty Statistics</a> which are great, but as far as I can tell don’t break down collisions by speed limit.</p>
-<p>Instead, the closest match I can find to data quoted in the article is published by the UK Government’s Department for Transport under the <a href="https://www.gov.uk/government/statistical-data-sets/road-safety-open-data">stats19 reporting system</a>. It’s a great example of government open data, being comprehensive, well documented and very clean. Hats off to the nerds who keep this data in such good shape, and an extra special nod of thanks for writing and maintaining an R package to go along with it.</p>
-<p>Wherever this data comes from it isn’t sufficiently linked or sourced - does this invalidate the article? No, but it starts the article on the wrong foot. To me it says ‘we’re not confident enough in these numbers to let you see them for yourself’ and ‘we don’t care enough about this to get the details right’.</p>
-</section>
-<section id="theres-no-denominator." class="level3">
-<h3 class="anchored" data-anchor-id="theres-no-denominator.">🚩 There’s no denominator.</h3>
-<p>Ok, fine, technically there is a denominator as we’re given the number of collisions per year but in this context that’s not meaningful enough. Here’s an example of the text of the article:</p>
-<blockquote class="blockquote">
-<p>Last year, 254 crashes on 40mph routes resulted in a driver of [sic] passenger being injured. This was compared to 165 injury collisions on 50mph routes and 268 on 70mph dual carriageways. The figures highlight a five year high for collisions on 20mph routes. A total of 515 were recorded back in 2021, followed by a reduction to 488 two years later.<sup>1</sup></p>
-</blockquote>
-<p>While these are real numbers from a real dataset, they don’t contain enough information to draw any conclusions about the effect of 20mph zones. The most glaring issue I have with this is that <strong>if there are more roads with 20mph than last year then more collisions will happen on those roads.</strong> Saying that the number of collisions is at a five year high doesn’t tell you much if you don’t take into account the underlying conditions behind that number.</p>
-<p>A more informative figure here could be “collisions / kilometer of road type” or even better “collisions / vehicle kilometer on that road type”. The former of these would account for changes in the make-up of the road network while the latter would also account for changes in vehicle volumes. It turns out that the data to make these comparisons is trickier to get hold of (more on that later) but that doesn’t excuse choosing meaningless numbers to make a point.</p>
-</section>
-<section id="only-20mph-can-beat-30mph-here" class="level3">
-<h3 class="anchored" data-anchor-id="only-20mph-can-beat-30mph-here">🚩 “Only 20mph can beat 30mph here”</h3>
-<p>The next statistical sin feels a lot like the <a href="https://fullfact.org/politics/election-leaflets-2026/">dodgy graphs on the back of election leaflets</a>. Here’s Tim Eagle MSP quoted in the article:</p>
-<blockquote class="blockquote">
-<p>20mph zones account for the third highest number of vehicle crashes that result in an injury, with more collisions than in 40mph, 50mph and 70mph areas</p>
-</blockquote>
-<p>If we take the figures quoted earlier and graph them you can certainly see Mr Eagle’s point:</p>
-<div class="cell">
-<div id="fig-badspeedlimits" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-badspeedlimits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-64226aba7619ed8aa137" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-64226aba7619ed8aa137">{"x":{"visdat":{"c6cb122826e9":["function () ","plotlyVisDat"]},"cur_data":"c6cb122826e9","attrs":{"c6cb122826e9":{"x":{},"y":{},"marker":{"color":["#eb6834","#2a78d6","#2a78d6","#2a78d6"]},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","type":"category","categoryorder":"array","categoryarray":["20mph","40mph","50mph","70mph"]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"Number of collisions"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":["20mph","40mph","50mph","70mph"],"y":[570,254,165,268],"marker":{"color":["#eb6834","#2a78d6","#2a78d6","#2a78d6"],"line":{"color":"rgba(31,119,180,1)"}},"text":[570,254,165,268],"textposition":["outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-badspeedlimits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: 2025 injury collisions on 20mph, 40mph, 50mph and 70mph roads in Scotland
-</figcaption>
-</figure>
-</div>
-</div>
-<p>You may have noticed that the values for 30mph roads and 60mph roads aren’t referenced in the articles. Lets pull them out and add them to the graph:</p>
-<div class="cell">
-<div id="fig-allspeedlimits" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-allspeedlimits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-6b626681081564796e72" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-6b626681081564796e72">{"x":{"visdat":{"c6cb1c74b29c":["function () ","plotlyVisDat"]},"cur_data":"c6cb1c74b29c","attrs":{"c6cb1c74b29c":{"x":{},"y":{},"marker":{"color":"#2a78d6"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","type":"category","categoryorder":"array","categoryarray":["20mph","30mph","40mph","50mph","60mph","70mph"]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"Number of collisions"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":["20mph","30mph","40mph","50mph","60mph","70mph"],"y":[570,1729,254,165,1118,268],"marker":{"color":"#2a78d6","line":{"color":"rgba(31,119,180,1)"}},"text":[570,1729,254,165,1118,268],"textposition":["outside","outside","outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-allspeedlimits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: 2025 injury collisions in Scotland by speed limit
-</figcaption>
-</figure>
-</div>
-</div>
-<p>Oh.</p>
-<p>So here’s the thing - it’s OK to exclude some data from your comparisons if you have justification for doing so. In fact I’m going to do just that later in the blog. No justification is given in the article for not reporting the numbers for 30mph and 60mph, and I can’t even charitably think of one that anyone might give in good faith. You could argue, in fact that given most new 20mph limits are replacing existent 30mph limits that the comparison between those two is the most important one you could make.</p>
-<p>If we accept the logic of the article that the collisions number is a useful proxy for safety (we shouldn’t), then turning 30mph zones into 20mph zones would be an obvious step to improve safety. The whole picture is completely different with the inclusion of that data. Omitting to mention the counts for 30mph and 60mph without justification is at best misleading and at worst wilfully dishonest.</p>
-</section>
-<section id="the-secret-to-stats-is-the-same-as-the-secret-to-comedy" class="level3">
-<h3 class="anchored" data-anchor-id="the-secret-to-stats-is-the-same-as-the-secret-to-comedy">🚩The Secret to Stats is the Same as the Secret to Comedy</h3>
-<p>…Timing.</p>
-<p>Lets look at one of the claims in the headline:</p>
-<blockquote class="blockquote">
-<p>20mph speed limit branded ‘ploy against drivers’ as collisions reach five year high</p>
-</blockquote>
-<p>Of course, it is factually correct that collisions in 20mph zones has reached a 5 year high. Here’s a graph to prove it:</p>
-<div class="cell">
-<div id="fig-20trend" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-20trend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-1493038109a978d3a9de" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-1493038109a978d3a9de">{"x":{"visdat":{"c6cb49f09175":["function () ","plotlyVisDat"]},"cur_data":"c6cb49f09175","attrs":{"c6cb49f09175":{"x":{},"y":{},"marker":{"color":"#eb6834"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","tickmode":"array","tickvals":[2021,2022,2023,2024,2025]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"20mph injury collisions"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":[2021,2022,2023,2024,2025],"y":[522,526,482,526,570],"marker":{"color":"#eb6834","line":{"color":"rgba(31,119,180,1)"}},"text":[522,526,482,526,570],"textposition":["outside","outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-20trend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: 20mph road injury collisions in Scotland, 2021–2025
-</figcaption>
-</figure>
-</div>
-</div>
-<p>It does indeed show numbers at a 5 year high, but does that support the claim that 20mph zones aren’t improving safety? If you want to show that on a time series graph you can annotate the graph to show where in time the intervention you’re talking about takes place, <a href="https://xkcd.com/1356">like in this classic from xkcd</a>. Let’s add in the deadline for the roll-out of 20mph zones in Scotland, March 2026:</p>
-<div class="cell">
-<div id="fig-20trend-deadline" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-20trend-deadline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-818ab010088acb6e9dce" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-818ab010088acb6e9dce">{"x":{"visdat":{"c6cb61276f0d":["function () ","plotlyVisDat"]},"cur_data":"c6cb61276f0d","attrs":{"c6cb61276f0d":{"x":{},"y":{},"marker":{"color":"#eb6834"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","tickmode":"array","tickvals":[2021,2022,2023,2024,2025],"range":[2020.4000000000001,2026.8]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"20mph injury collisions"},"legend":{"orientation":"h","y":-0.20000000000000001},"shapes":[{"type":"line","x0":2026.2,"x1":2026.2,"y0":0,"y1":600,"line":{"color":"#d62828","dash":"dash","width":1.5}}],"annotations":[{"x":2026.2,"y":600,"text":"National rollout<br />deadline: March 2026","showarrow":false,"xanchor":"left","font":{"size":11,"color":"#d62828"}}],"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":[2021,2022,2023,2024,2025],"y":[522,526,482,526,570],"marker":{"color":"#eb6834","line":{"color":"rgba(31,119,180,1)"}},"text":[522,526,482,526,570],"textposition":["outside","outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-20trend-deadline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: 20mph road injury collisions in Scotland, 2021–2025, against the national rollout deadline
-</figcaption>
-</figure>
-</div>
-</div>
-<p>The article is using data to infer the effects of a policy that is taken before that policy has been enacted. It’s a bit like calling your GP to complain that your antibiotics aren’t working before you’ve started taking them. The Scottish Greens, who championed the policy in the Scottish Parliament surveyed all local authorities <a href="https://greens.scot/news/councils-must-step-up-20mph-promise">and found that only 5 had completed the roll-out in June 2026</a>. To be clear you cannot blame anything found in this data on the 20mph roll-out because, as far as the data is concerned it hasn’t happened yet.</p>
-</section>
-<section id="a-better-use-of-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="a-better-use-of-the-data">A Better Use of the Data</h2>
-<p>I don’t want to just sit here and criticise the article, I want to see if there’s something we can genuinely learn from the data if we treat it with more respect. I’ll add links to my primary data throughout.</p>
-<section id="a-better-denominator" class="level3">
-<h3 class="anchored" data-anchor-id="a-better-denominator">✅ A Better Denominator</h3>
-<p>As I mention above, a more meaningful statistic is possible here if we put the collisions in the correct context. I’ve tried to find a breakdown of the length of each road in Scotland by speed limit but the closest thing I can find is in <a href="https://www.transport.gov.scot/publication/scottish-transport-statistics-2025">Transport Scotland’s Scottish Transport Statistics 2025 Report</a>. Near the bottom of that page is the link to the Excel sheets for Chapter 4 - Road Network, where the roads are broken down into ‘Roads up to 40mph’ and ‘Roads over 40mph’. This isn’t granular enough for looking at specific speed limits, so I’ve sent an FOI to Transport Scotland to see if they hold the data at individual speed limit level.</p>
-<p>The same report details traffic volumes in Chapter 5 - Road Traffic. The published dataset splits the traffic volume estimates (given in million vehicle kilometers) by road type rather than speed limit. The distinction of minor/major roads doesn’t map perfectly with speed limits - some minor roads will have high speed limits and vice versa - but the vast majority of roads affected by the 20mph roll-out will be minor roads. Here, I’m having to make a judgement call about the compromise I have to make in the data, but crucially I’ve also stated my defense for my choice. I’ll proceed with this with the caveat that it contains volumes of traffic on roads that we’re not interested in. Here’s the trend in that measure from the data:</p>
-<div class="cell">
-<div id="fig-minorroadtraffic" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-minorroadtraffic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-d72ef38c05e4d1a1c9eb" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-d72ef38c05e4d1a1c9eb">{"x":{"visdat":{"c6cb64bddae1":["function () ","plotlyVisDat"]},"cur_data":"c6cb64bddae1","attrs":{"c6cb64bddae1":{"x":{},"y":{},"marker":{"color":"#2a78d6"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","tickmode":"array","tickvals":[2021,2022,2023,2024]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"Traffic volume (million vehicle-km)"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":[2021,2022,2023,2024],"y":[15908,17009,17221,17633],"marker":{"color":"#2a78d6","line":{"color":"rgba(31,119,180,1)"}},"text":["15,908","17,009","17,221","17,633"],"textposition":["outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-minorroadtraffic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Traffic volume on minor roads (B, C and unclassified) in Scotland, 2021–2024
-</figcaption>
-</figure>
-</div>
-</div>
-</section>
-<section id="a-defensible-subset-of-data" class="level3">
-<h3 class="anchored" data-anchor-id="a-defensible-subset-of-data">✅ A Defensible Subset of Data</h3>
-<p>Time to focus on which data will tell us something useful. Given the focus of the question is whether the 20mph policy improves road safety, I think it’s important to consider the desired outcome of the policy. <a href="https://www.transport.gov.scot/media/3yxfd5tp/the-implementation-guide-for-20-mph-speed-limits-in-scotland.pdf">The Scottish Goverment’s Implementation for 20mph limits</a> highlights the importance of reducing the severity of collisions:</p>
-<blockquote class="blockquote">
-<p>The speed of a vehicle directly influences the risk of a collision as well as the severity of injuries sustained, and the likelihood of death resulting from that collision.</p>
-</blockquote>
-<p>With that in mind, choosing to focus on collisions in which one or more casualty is killed or seriously injured (so-called KSI collisions) allows both the frequency and severity of collisions to be covered in the analysis. Again, this is a choice that I have made to exclude some data from my analysis but I’ve made clear my reason for doing so. Here’s that trend, not corrected for traffic volume:</p>
-<div class="cell">
-<div id="fig-minorksicount" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-minorksicount-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-e167568041d683ec215a" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-e167568041d683ec215a">{"x":{"visdat":{"c6cb16f3a85b":["function () ","plotlyVisDat"]},"cur_data":"c6cb16f3a85b","attrs":{"c6cb16f3a85b":{"x":{},"y":{},"marker":{"color":"#6b7278"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","tickmode":"array","tickvals":[2021,2022,2023,2024]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"KSI collisions"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":[2021,2022,2023,2024],"y":[744,793,878,871],"marker":{"color":"#6b7278","line":{"color":"rgba(31,119,180,1)"}},"text":[744,793,878,871],"textposition":["outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-minorksicount-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: KSI collisions on minor roads (B, C and unclassified) in Scotland, 2021–2024
-</figcaption>
-</figure>
-</div>
-</div>
-</section>
-<section id="a-realistic-conclusion" class="level3">
-<h3 class="anchored" data-anchor-id="a-realistic-conclusion">✅ A Realistic Conclusion</h3>
-<p>You may have noticed that I don’t have any data for 2025 above - that’s because I don’t have the traffic volume data for 2025 yet. This limits the scope of the conclusions we can make but it doesn’t mean we can’t learn something. Here’s the KSI collision rate corrected for traffic volume:</p>
-<div class="cell">
-<div id="fig-minorksirate" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-minorksirate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-e98c52bc253fde34e4a6" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-e98c52bc253fde34e4a6">{"x":{"visdat":{"c6cb340b86c0":["function () ","plotlyVisDat"]},"cur_data":"c6cb340b86c0","attrs":{"c6cb340b86c0":{"x":{},"y":{},"marker":{"color":"#eb6834"},"text":{},"textposition":"outside","showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"","tickmode":"array","tickvals":[2021,2022,2023,2024]},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"KSI per billion vehicle-km"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":[2021,2022,2023,2024],"y":[46.799999999999997,46.600000000000001,51,49.399999999999999],"marker":{"color":"#eb6834","line":{"color":"rgba(31,119,180,1)"}},"text":[46.799999999999997,46.600000000000001,51,49.399999999999999],"textposition":["outside","outside","outside","outside"],"showlegend":false,"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-minorksirate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: KSI collisions per billion vehicle-km on minor roads in Scotland, 2021–2024
-</figcaption>
-</figure>
-</div>
-</div>
-<p>There’s no clear trend on display here, but we can see that 2023 and 2024 have higher traffic-adjusted rates of KSI collisions than the preceding years. There’s nothing in this data that point to a cause for that rise but it’s there and it’s real. Here’s my attempt at a statistically defensible headline from that data:</p>
-<div class="callout callout-style-simple callout-important no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Serious crash rate on minor roads averaged 7.5% higher in 2023–24 than 2021–22.</p>
-</div>
-</div>
-</div>
-<p>And that’s it. There’s no evidence that 20mph zones may have caused it, no evidence of a war on motorists. Just and indication of something that could be a problem - the kind of problem that needs an intervention to fix it.</p>
-
-
-</section>
-</section>
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>My own pull of the same STATS19 data gives 522 collisions in 2021 and 482 in 2023, not 515 and 488 as quoted here. STATS19 records are periodically revised as late reports and corrections come in, so this is most likely a difference in when each of us pulled the data, rather than an error on either side.↩︎</p></li>
-</ol>
-</section></div> ]]></description>
-  <category>road-safety</category>
-  <category>case-study</category>
-  <category>data</category>
-  <category>data-literacy</category>
-  <guid>https://themodeshift.scot/posts/2026-09-10-courier-20mph-article/</guid>
-  <pubDate>Thu, 10 Sep 2026 23:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Millburn Road - The Data</title>
-  <link>https://themodeshift.scot/posts/2026-09-04-inverness-data/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>To understand more about the bike lane on Millburn Road, I wanted to look at the cycling traffic levels right across the city of Inverness. The excellent news is that <a href="https://cycling-scotland-dashboard.usmart.io/">Cycling Scotland have an Open Data portal</a> that tracks lots of places across Scotland. The less great news is that the data starts in 2021, so there’s no simple before/after picture to see the effect of the installation of new bike lanes during the COVID-19 pandemic. There’s still a lot to learn from what is there though!</p>
-<p>Millburn Road has two traffic counters, one each for the Eastward and Westward sections of the road. The point where the counters appear on the map is almost exactly where the section of bike lane has been removed making it a good place to measure bike traffic:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://themodeshift.scot/posts/2026-09-04-inverness-data/usmart-screenshot-millburn-west.png" class="img-fluid figure-img" alt="A map zoomed in on Millburn Road in Inverness on which two traffic counters are marked. The right of the image shows some of the stats from the counter."></p>
-<figcaption>Image taken from Cycling Scotland Open Data portal (usmart.io)</figcaption>
-</figure>
-</div>
-<p>By grabbing the data from both the <a href="https://umove.usmart.ai/organisation/peopleandplace/dashboard/cycle-open-data?site=HLD002">Eastward</a> and <a href="https://umove.usmart.ai/organisation/peopleandplace/dashboard/cycle-open-data?site=HLD011">Westward</a> counters it’s pretty easy to see which side of the road has a bike lane:</p>
-<div class="cell">
-<div id="fig-eastwest" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-eastwest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-21173b82650733677192" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-21173b82650733677192">{"x":{"visdat":{"c6e83b6d732a":["function () ","plotlyVisDat"]},"cur_data":"c6e83b6d732a","attrs":{"c6e83b6d732a":{"x":{},"y":{},"mode":"lines+markers","line":{"width":2.5},"marker":{"size":5},"color":{},"colors":["#6b7278","#eb6834"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":10,"r":20},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"color":"#1a1a1a","family":"Helvetica, Arial, sans-serif","size":12},"xaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":""},"yaxis":{"domain":[0,1],"automargin":true,"gridcolor":"#e0e6ea","zeroline":false,"title":"Avg daily cycle count"},"legend":{"orientation":"h","y":-0.20000000000000001},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false},"data":[{"x":["2022-01-01","2022-02-01","2022-03-01","2022-04-01","2022-05-01","2022-06-01","2022-07-01","2022-08-01","2022-09-01","2022-10-01","2022-11-01","2022-12-01","2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01","2025-01-01","2025-02-01","2025-03-01","2025-04-01","2025-05-01","2025-06-01","2025-07-01","2025-08-01","2025-09-01","2025-10-01","2025-11-01","2025-12-01","2026-01-01","2026-02-01","2026-03-01","2026-04-01","2026-05-01","2026-06-01"],"y":[74.258064516129039,93.428571428571431,85.193548387096769,83.066666666666663,80.193548387096769,116.76666666666667,133.58064516129033,134.06451612903226,118.53333333333333,54.032258064516128,45.06666666666667,35.096774193548384,37.677419354838712,39.25,41.677419354838712,54.333333333333329,65.096774193548384,56.799999999999997,60.774193548387096,56.064516129032256,58.06666666666667,44.612903225806448,41.600000000000001,31.35483870967742,30.225806451612904,35.96551724137931,50.645161290322584,53.13333333333334,61.806451612903224,56.266666666666666,54.064516129032256,58.193548387096776,55.06666666666667,44.322580645161288,40.833333333333329,29.774193548387096,16.741935483870968,19.071428571428573,21.29032258064516,28.133333333333336,24.642857142857142,23.071428571428573,26.899999999999999,28.833333333333332,26.888888888888889,21.464285714285715,20.285714285714285,17.482758620689655,13.357142857142856,17.5,18.310344827586206,17.222222222222221,28,22.800000000000001],"mode":"lines+markers","line":{"color":"rgba(107,114,120,1)","width":2.5},"marker":{"color":"rgba(107,114,120,1)","size":5,"line":{"color":"rgba(107,114,120,1)"}},"type":"scatter","name":"Eastward","textfont":{"color":"rgba(107,114,120,1)"},"error_y":{"color":"rgba(107,114,120,1)"},"error_x":{"color":"rgba(107,114,120,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2022-01-01","2022-02-01","2022-03-01","2022-04-01","2022-05-01","2022-06-01","2022-07-01","2022-08-01","2022-09-01","2022-10-01","2022-11-01","2022-12-01","2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01","2025-01-01","2025-02-01","2025-03-01","2025-04-01","2025-05-01","2025-06-01","2025-07-01","2025-08-01","2025-09-01","2025-10-01","2025-11-01","2025-12-01","2026-01-01","2026-02-01","2026-03-01","2026-04-01","2026-05-01","2026-06-01"],"y":[465.90322580645159,447.14285714285717,599.06451612903231,567.16666666666663,692.0322580645161,788.5,718.09677419354841,817.70967741935488,813.20000000000005,529.19354838709683,497.69999999999999,290.90322580645159,298.77419354838707,380.75,400.51612903225805,470.36666666666667,534.32258064516134,582.76666666666665,489.22580645161293,550.16129032258061,577.86666666666667,479.90322580645159,444.43333333333334,340.51612903225805,280.16129032258067,349.58620689655174,397.12903225806451,426.93333333333328,471.58064516129031,452,434.51612903225805,468.48387096774195,459.46666666666664,411.03225806451616,345.80000000000001,75.225806451612883,0,0,175.73333333333332,241.65517241379311,245.76666666666668,235.41379310344828,241.36666666666667,237.61290322580646,252.69230769230768,205.38461538461539,179.21428571428572,142.25,123.85714285714285,157.11111111111111,172.31034482758622,169.75,218.55555555555554,205.06666666666666],"mode":"lines+markers","line":{"color":"rgba(235,104,52,1)","width":2.5},"marker":{"color":"rgba(235,104,52,1)","size":5,"line":{"color":"rgba(235,104,52,1)"}},"type":"scatter","name":"Westward","textfont":{"color":"rgba(235,104,52,1)"},"error_y":{"color":"rgba(235,104,52,1)"},"error_x":{"color":"rgba(235,104,52,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eastwest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Average daily cycle counts on Millburn Road by direction, 2022–2026
-</figcaption>
-</figure>
-</div>
-</div>
-<p>After a look to see if the data is what we want (it is) we can then download the full dataset for the Highland Council area. This gives daily aggregated counts at each site of cyclists, pedestrians, motorcycles, cars, buses, and goods vehicles from March 2021 to June 2026.</p>
-<p>In the next post, we’ll look at how the cycle counts compare to the other city centre sites:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://themodeshift.scot/posts/2026-09-04-inverness-data/usmart-screenshot-inverness-centre.png" class="img-fluid figure-img" style="width:70.0%" alt="A map zoomed in on Inverness city centre on which several traffic counters are marked."></p>
-<figcaption>Image taken from Cycling Scotland Open Data portal (usmart.io)</figcaption>
-</figure>
-</div>
-
-
-
- ]]></description>
-  <category>infrastructure</category>
-  <category>case-study</category>
-  <category>data</category>
-  <guid>https://themodeshift.scot/posts/2026-09-04-inverness-data/</guid>
-  <pubDate>Thu, 03 Sep 2026 23:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Millburn Road, Inverness - The Background</title>
-  <link>https://themodeshift.scot/posts/2026-09-03-millburn-background/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>To open this project I’m going to have a look at some infrastructure that is close to home - the segregated bike lane on Millburn Road in Inverness.</p>
-<p>During the height of the COVID-19 pandemic, cities across Scotland installed lots of temporary bike lanes as people’s travel habits changes in response to the virus. One such lane was built along a stretch of Millburn Road<sup>1</sup> protecting cyclists on a particularly busy route into the city. The road went from looking like this in 2017:</p>
-<iframe src="https://www.google.com/maps/embed?pb=!4v1788464524212!6m8!1m7!1sCDsIXwQnWN7DlLjHSoZ9kg!2m2!1d57.48009006687476!2d-4.218674253861359!3f217.12904765440703!4f-12.050525166695664!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
-</iframe>
-<p>To this in 2025:</p>
-<iframe src="https://www.google.com/maps/embed?pb=!4v1788464792219!6m8!1m7!1ss1U3zWeD_4YfZHfT9X6_NQ!2m2!1d57.48006149079656!2d-4.218620963175761!3f217.12904765440703!4f-12.050525166695664!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
-</iframe>
-<p>So you can see it’s gone from a fairly inhospitable place to cycle, to one that’s fairly attractive. Then in a surprising move earlier this year <a href="https://www.bbc.co.uk/news/articles/cp9l34jn1e2o">Highland Council removed a section at the westernmost junction</a>.</p>
-<div id="fig-lane-comparison" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A comparison image of the bike lane before and after the 2026 shortening">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-lane-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://themodeshift.scot/posts/2026-09-03-millburn-background/bbc_lane_comparison.png" class="img-fluid figure-img" alt="A comparison image of the bike lane before and after the 2026 shortening">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lane-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: The Millburn Rd bike lane, before and after the 2026 shortening. Photo: Highland Cycle Campaign
-</figcaption>
-</figure>
-</div>
-<p>Over the next few weeks I’m going to explore some of the data around this junction to investigate how useful it’s been to the city. I want to see what we can learn from the infrastructure to help better inform any plans for what comes next.</p>
-
-
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>It was shortened after a couple of years, more detail on that in a later post.↩︎</p></li>
-</ol>
-</section></div> ]]></description>
-  <category>infrastructure</category>
-  <category>case-study</category>
-  <guid>https://themodeshift.scot/posts/2026-09-03-millburn-background/</guid>
-  <pubDate>Tue, 01 Sep 2026 23:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Hello, Mode Shift</title>
-  <link>https://themodeshift.scot/posts/2026-09-02-hello-world/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>First post — more to come as the Scottish active travel analysis develops.</p>
-
-
-
- ]]></description>
-  <category>meta</category>
-  <guid>https://themodeshift.scot/posts/2026-09-02-hello-world/</guid>
-  <pubDate>Tue, 01 Sep 2026 23:00:00 GMT</pubDate>
-</item>
-</channel>
-</rss>
+</body></html>

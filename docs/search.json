@@ -35,11 +35,60 @@
     "text": "Get in touch\n email: steve@themodeshift.scot\n bluesky: @themodeshift.scot"
   },
   {
-    "objectID": "posts/2026-09-02-hello-world/index.html",
-    "href": "posts/2026-09-02-hello-world/index.html",
-    "title": "Hello, Mode Shift",
+    "objectID": "posts/2026-09-12-millburn-volume analysis/index.html",
+    "href": "posts/2026-09-12-millburn-volume analysis/index.html",
+    "title": "Millburn Road - Cycling Volume Analysis",
     "section": "",
-    "text": "First post — more to come as the Scottish active travel analysis develops."
+    "text": "This is the third in a series of posts about a cycle lane in Millburn Road, Inverness. The previous post, detailing where we’re getting the data from can be found here."
+  },
+  {
+    "objectID": "posts/2026-09-12-millburn-volume analysis/index.html#what-data-are-we-looking-at",
+    "href": "posts/2026-09-12-millburn-volume analysis/index.html#what-data-are-we-looking-at",
+    "title": "Millburn Road - Cycling Volume Analysis",
+    "section": "What data are we looking at?",
+    "text": "What data are we looking at?\nI’ve decided to concentrate on the main entry points and routes through the city. There’s a continuous counter placed anywhere you see this icon  on the map below1:\n\n\n\nImage taken from Cycling Scotland Open Data portal (usmart.io)\n\n\nThis gives counts at the following locations:\n\n\n\nMillburn Road\nNess Walk\nGreig Street\n\n\n\nHuntly Street\nAcademy Street\nCrown Road\n\n\n\nBank Street\nBridge Street\nCastle Road\n\n\n\nBoth Millburn Road and Academy Street have two counters each, one for eastbound and one for westbound traffic. Since this analysis isn’t interested in the directional distinction, they have been combined into one count for each street."
+  },
+  {
+    "objectID": "posts/2026-09-12-millburn-volume analysis/index.html#cycling-volume-history",
+    "href": "posts/2026-09-12-millburn-volume analysis/index.html#cycling-volume-history",
+    "title": "Millburn Road - Cycling Volume Analysis",
+    "section": "Cycling volume history",
+    "text": "Cycling volume history\nThe first number we want to look at is just how busy each counter is with cycle traffic. Figure 1 shows all of the cycle traffic volume data since collection started in March 2021. Millburn Road is highlighted orange, and you can mouse over the other lines to see which counter they correspond to.\n\n\n\n\n\n\n\n\nFigure 1: Average daily cycle counts by road, 2021–2026\n\n\n\n\nA couple of things stand out on the chart before we address Millburn Road. The first is that the data in the 2021-2022 period looks quite messy. I think it’s reasonable to say that the travel patterns in the early post-pandemic years is sufficiently different to where we are now to give that data a separate look another time.\nThe second thing is the steep drop in counts at all sites in the winter 2024/25 period. I don’t know enough yet to explain it, but I do want to say I’m working on figuring it out and will publish what I find. It’s worth noting that cycle traffic appears to be overall lower after this blip. Until I know more about whether that’s real or an artefact of data collection, I’ll refrain from commenting on any trends over time.\nFigure 2 shows the data starting in January 2023:\n\n\n\n\n\n\n\n\nFigure 2: Average daily cycle counts by road, 2023–2026\n\n\n\n\nIt’s clear that the Millburn Road counter has consistently been among the highest counts in the city. Other sites with similarly high cycling volume are Huntly Street (coloured ochre) and Ness Walk (coloured blue). The significant dip in volume in 2023/24 on Ness Walk was caused by its closure to upgrade the cycling infrastructure there (yay!).\nSince 2025 is the most recent full year for which we have data2, the median count at each site in that year also gives a useful picture.\n\n\n\n\nTable 1: Median daily cycle counts by road, 2025\n\n\n\n\n\n\n\n\n\nLocation\nMedian daily cycle count\nDays with data\n\n\n\n\nNess Walk\n256\n348\n\n\nMillburn Road\n218\n362\n\n\nBridge Street\n194\n347\n\n\nHuntly Street\n168\n348\n\n\nAcademy Street\n152\n349\n\n\nBank Street\n122\n349\n\n\nGreig Street\n119\n347\n\n\nCastle Road\n102\n351\n\n\nCrown Road\n19\n352\n\n\n\n\n\n\n\n\n\n\nThis is a clearer way to show the main takeaway from this data: Millburn Road is, realtive to the rest of the city centre, busy with bicycles."
+  },
+  {
+    "objectID": "posts/2026-09-12-millburn-volume analysis/index.html#the-mode-shift-share",
+    "href": "posts/2026-09-12-millburn-volume analysis/index.html#the-mode-shift-share",
+    "title": "Millburn Road - Cycling Volume Analysis",
+    "section": "The Mode Shift Share",
+    "text": "The Mode Shift Share\nA really important measure when looking at any mode of transport is its share of the overall traffic in the data. Mode share (sometimes called modal share) is the kind of measure you could name a blog after.\nFigure 3 and Table 2 show the mode share companions to our volume data:\n\n\n\n\n\n\n\n\nFigure 3: Cycling mode share by road, 2023–2026\n\n\n\n\n\n\n\n\nTable 2: Median daily cycling mode share by road, 2025\n\n\n\n\n\n\n\n\n\nLocation\nMedian daily cycling mode share\nDays with data\n\n\n\n\nNess Walk\n10.2%\n362\n\n\nHuntly Street\n9.6%\n362\n\n\nGreig Street\n5.5%\n362\n\n\nBridge Street\n2.0%\n362\n\n\nCastle Road\n1.9%\n362\n\n\nMillburn Road\n1.7%\n362\n\n\nBank Street\n1.0%\n362\n\n\nCrown Road\n0.9%\n362\n\n\nAcademy Street\n0.9%\n362\n\n\n\n\n\n\n\n\n\n\nYou may have had the same initial gut instinct as me - yikes. Millburn Road plummets down the table to nestle between Castle Road and Bank Street, neither of which is a big hitter in the cycle volume league above. Millburn’s previous contenders, Ness Walk and Huntly street stay at the top of the charts, with their mode share towering above all others.\nHowever, if we take the raw volume into account as well as the mode share it actually highlights Millburn Road as being uniquely good at getting bikes through. Ness Walk and Huntly Street have high cycle volumes and high mode shares in part because relative to the other sites they have low numbers of motor vehicles. Millburn Road carries a similar volume of cyclists but with much more motor traffic. This is really clear to see if we look at the motor vehicle counts as well:\n\n\n\n\nTable 3: Median daily cycle count, motor traffic count, and cycling mode share by road, 2025\n\n\n\n\n\n\n\n\n\nLocation\nMedian daily cycle count\nMedian daily motor count\nDays with data\nCycling mode share\n\n\n\n\nMillburn Road\n218\n11,960\n362\n1.7%\n\n\nNess Walk\n256\n990\n362\n10.2%\n\n\nHuntly Street\n168\n754\n362\n9.6%\n\n\n\n\n\n\n\n\n\n\nCyclists on Millburn road are typically coexisting with a volume of motor traffic that is an order of magnitude bigger than comparable sites in the city."
+  },
+  {
+    "objectID": "posts/2026-09-12-millburn-volume analysis/index.html#conclusion",
+    "href": "posts/2026-09-12-millburn-volume analysis/index.html#conclusion",
+    "title": "Millburn Road - Cycling Volume Analysis",
+    "section": "Conclusion",
+    "text": "Conclusion\nIt’s fairly clear that historically, Millburn Road is unique within Inverness city centre for its ability to transport large numbers of cyclists alongside heavy motor traffic. This in itself is not entirely surprising as it contained the only section of segregated cycle lane next to a busy road in the city but it does highlight the importance of that lane.\nTo me, this makes the Highland Council’s decision to remove a section of it right at the most complex junction seem to go against their stated vision to make active travel an attractive and realistic choice for more people, more often, for more of their everyday journeys. I hope they will take a good look at this data as they plan for how they will move forward at that site. I think it makes a good case for improving and indeed extending the cycle lane along that corridor to enable even more people to arrive in the city by bicycle."
+  },
+  {
+    "objectID": "posts/2026-09-12-millburn-volume analysis/index.html#footnotes",
+    "href": "posts/2026-09-12-millburn-volume analysis/index.html#footnotes",
+    "title": "Millburn Road - Cycling Volume Analysis",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThe other icons visible on the map count periodic, not continuous data.↩︎\nThis year also avoids any major changes to the infrastructure layout at each site.↩︎"
+  },
+  {
+    "objectID": "posts/2026-09-03-millburn-background/index.html",
+    "href": "posts/2026-09-03-millburn-background/index.html",
+    "title": "Millburn Road, Inverness - The Background",
+    "section": "",
+    "text": "To open this project I’m going to have a look at some infrastructure that is close to home - the segregated bike lane on Millburn Road in Inverness.\nDuring the height of the COVID-19 pandemic, cities across Scotland installed lots of temporary bike lanes as people’s travel habits changes in response to the virus. One such lane was built along a stretch of Millburn Road1 protecting cyclists on a particularly busy route into the city. The road went from looking like this in 2017:\nTo this in 2025:\nSo you can see it’s gone from a fairly inhospitable place to cycle, to one that’s fairly attractive. Then in a surprising move earlier this year Highland Council removed a section at the westernmost junction.\nOver the next few weeks I’m going to explore some of the data around this junction to investigate how useful it’s been to the city. I want to see what we can learn from the infrastructure to help better inform any plans for what comes next."
+  },
+  {
+    "objectID": "posts/2026-09-03-millburn-background/index.html#footnotes",
+    "href": "posts/2026-09-03-millburn-background/index.html#footnotes",
+    "title": "Millburn Road, Inverness - The Background",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIt was shortened after a couple of years, more detail on that in a later post.↩︎"
   },
   {
     "objectID": "posts/2026-09-10-courier-20mph-article/index.html",
@@ -70,24 +119,17 @@
     "text": "To understand more about the bike lane on Millburn Road, I wanted to look at the cycling traffic levels right across the city of Inverness. The excellent news is that Cycling Scotland have an Open Data portal that tracks lots of places across Scotland. The less great news is that the data starts in 2021, so there’s no simple before/after picture to see the effect of the installation of new bike lanes during the COVID-19 pandemic. There’s still a lot to learn from what is there though!\nMillburn Road has two traffic counters, one each for the Eastward and Westward sections of the road. The point where the counters appear on the map is almost exactly where the section of bike lane has been removed making it a good place to measure bike traffic:\n\n\n\nImage taken from Cycling Scotland Open Data portal (usmart.io)\n\n\nBy grabbing the data from both the Eastward and Westward counters it’s pretty easy to see which side of the road has a bike lane:\n\n\n\n\n\n\n\n\nFigure 1: Average daily cycle counts on Millburn Road by direction, 2022–2026\n\n\n\n\nAfter a look to see if the data is what we want (it is) we can then download the full dataset for the Highland Council area. This gives daily aggregated counts at each site of cyclists, pedestrians, motorcycles, cars, buses, and goods vehicles from March 2021 to June 2026.\nIn the next post, we’ll look at how the cycle counts compare to the other city centre sites:\n\n\n\nImage taken from Cycling Scotland Open Data portal (usmart.io)"
   },
   {
-    "objectID": "posts/2026-09-03-millburn-background/index.html",
-    "href": "posts/2026-09-03-millburn-background/index.html",
-    "title": "Millburn Road, Inverness - The Background",
+    "objectID": "posts/2026-09-02-hello-world/index.html",
+    "href": "posts/2026-09-02-hello-world/index.html",
+    "title": "Hello, Mode Shift",
     "section": "",
-    "text": "To open this project I’m going to have a look at some infrastructure that is close to home - the segregated bike lane on Millburn Road in Inverness.\nDuring the height of the COVID-19 pandemic, cities across Scotland installed lots of temporary bike lanes as people’s travel habits changes in response to the virus. One such lane was built along a stretch of Millburn Road1 protecting cyclists on a particularly busy route into the city. The road went from looking like this in 2017:\nTo this in 2025:\nSo you can see it’s gone from a fairly inhospitable place to cycle, to one that’s fairly attractive. Then in a surprising move earlier this year Highland Council removed a section at the westernmost junction.\nOver the next few weeks I’m going to explore some of the data around this junction to investigate how useful it’s been to the city. I want to see what we can learn from the infrastructure to help better inform any plans for what comes next."
-  },
-  {
-    "objectID": "posts/2026-09-03-millburn-background/index.html#footnotes",
-    "href": "posts/2026-09-03-millburn-background/index.html#footnotes",
-    "title": "Millburn Road, Inverness - The Background",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nIt was shortened after a couple of years, more detail on that in a later post.↩︎"
+    "text": "First post — more to come as the Scottish active travel analysis develops."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "The Mode Shift",
     "section": "",
-    "text": "Data-driven analysis of active travel in Scotland — cycling volumes, mode share, and the infrastructure behind them.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInverness Courier - Bad 20mph Stats\n\n\n\nroad-safety\n\ncase-study\n\ndata\n\ndata-literacy\n\n\n\n\n\n\n\n\n\nSep 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMillburn Road - The Data\n\n\n\ninfrastructure\n\ncase-study\n\ndata\n\n\n\n\n\n\n\n\n\nSep 4, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMillburn Road, Inverness - The Background\n\n\n\ninfrastructure\n\ncase-study\n\n\n\n\n\n\n\n\n\nSep 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nHello, Mode Shift\n\n\n\nmeta\n\n\n\n\n\n\n\n\n\nSep 2, 2026\n\n\n\n\n\nNo matching items"
+    "text": "Data-driven analysis of active travel in Scotland — cycling volumes, mode share, and the infrastructure behind them.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMillburn Road - Cycling Volume Analysis\n\n\n\ninfrastructure\n\ncase-study\n\ndata\n\nMillburn-Rd\n\n\n\n\n\n\n\n\n\nSep 12, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nInverness Courier - Bad 20mph Stats\n\n\n\nroad-safety\n\ncase-study\n\ndata\n\ndata-literacy\n\n\n\n\n\n\n\n\n\nSep 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMillburn Road - The Data\n\n\n\ninfrastructure\n\ncase-study\n\ndata\n\n\n\n\n\n\n\n\n\nSep 4, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMillburn Road, Inverness - The Background\n\n\n\ninfrastructure\n\ncase-study\n\n\n\n\n\n\n\n\n\nSep 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nHello, Mode Shift\n\n\n\nmeta\n\n\n\n\n\n\n\n\n\nSep 2, 2026\n\n\n\n\n\nNo matching items"
   }
 ]

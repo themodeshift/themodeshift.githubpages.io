@@ -80,4 +80,4 @@ After a look to see if the data is what we want (it is) we can then download the
 
 In the next post, we'll look at how the cycle counts compare to the other city centre sites:
 
-![Image taken from Cycling Scotland Open Data portal (usmart.io)](usmart-screenshot-inverness-centre.png){fig-alt="A map zoomed in on Inverness city centre on which several traffic counters are marked. "}
+![Image taken from Cycling Scotland Open Data portal (usmart.io)](usmart-screenshot-inverness-centre.png){fig-alt="A map zoomed in on Inverness city centre on which several traffic counters are marked." fig-align="center" width="70%"}
