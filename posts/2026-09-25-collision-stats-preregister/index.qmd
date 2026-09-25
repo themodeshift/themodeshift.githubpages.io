@@ -1,0 +1,81 @@
+---
+title: "Pre-registration"
+date: 2026-09-25
+categories: [20mph, road safety, methodology, pre-registration]
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(plotly)
+library(lubridate)
+library(here)
+
+# --- Load data -----------------------------------------------------------
+# Paths are relative to the project root (themodeshift-scot/), found automatically
+# by here() regardless of where this .qmd file lives in the project.
+# Expects: themodeshift-scot/data/traffic_counts_inverness.csv
+traffic_counts_inverness <- read_csv(here("data", "traffic_counts_inverness.csv"))
+
+# shared plotly styling to match the site's light blue/white theme
+plotly_theme <- function(p, y_title = NULL) {
+  p %>%
+    layout(
+      paper_bgcolor = "rgba(0,0,0,0)",
+      plot_bgcolor  = "rgba(0,0,0,0)",
+      font  = list(color = "#1a1a1a", family = "Helvetica, Arial, sans-serif", size = 12),
+      xaxis = list(gridcolor = "#e0e6ea", zeroline = FALSE, title = ""),
+      yaxis = list(gridcolor = "#e0e6ea", zeroline = FALSE, title = y_title),
+      legend = list(orientation = "h", y = -0.2),
+      margin = list(l = 60, r = 20, t = 10, b = 40)
+    ) %>%
+    config(displaylogo = FALSE)
+}
+
+millburn_orange <- "#eb6834"
+accent_blue     <- "#2a78d6"
+accent_green    <- "#1baf7a"
+muted_gray      <- "#6b7278"
+```
+
+I was recently listening to the excellent [Cautionary Tales Podcast](https://timharford.com/2026/09/cautionary-tales-how-a-broken-arm-improved-my-french-with-david-epstein/) where the host, Tim Harford[^1] is discussing the importance of constraints on creativity with the author David Epstein. In it, David refers to the replication crisis that developed in the late 20th and early 21st century, where many wild findings would crop up in the news - largely from psychological or medical studies. Stuff like 'you're more likely to eat excessively from a blue bowl than a red bowl' or the myriad claims of almost every foodstuff both causing and preventing cancer. Other researchers would try to replicate the studies and in many cases weren't able to casting doubt as to whether the effects are real. After a while the realisation hit that the issue was that the researchers were pressurised to publish *something* so if their experiments yielded a null result, they'd simply interrogate the data they'd collected to find any correlations significant enough to be accepted by a journal. A good way to find a lot of false positives! 
+
+[^1]: Also the host of BBC's More or Less. If you've read any of this blog it will come as no surprise to you that I am a Loyal Listener.
+
+The solution (which is still evolving in many fields) has been for funding bodies and journals to require researchers to register their proposed methods and hypotheses in advance. This places a crucial constraint on the researchers - a methodological discipline that prevents torturing the data for answers that aren't real. I don't doubt there are still problems in those fields, but on all accounts I've seen it's been a good move in the right direction.
+
+What's this got to do with active travel stats? It's given me an idea to build on the data I looked at related to [20mph zones in Scotland and road collisions](https://themodeshift.scot/posts/2026-09-10-courier-20mph-article/), where I found that the collision data isn't available yet to assess the effectiveness of the new speed limits. One day it will be, so now is a good time to say what I plan to look for in the data when it arrives. I'm not 100% sure what data I'll have access to but I'll do my best to provide myself with a framework to be accountable to.
+
+#### Which collisions to look at?
+
+One of the aims of the 20mph scheme is to reduce the frequency *and* severity of collisions. To capture both of these dimensions I'll focus on the collisions in which there is a casualty who is killed or severely injured (KSI collisions). Of course, reducing collisions overall would be a good target to aim for as well but reducing KSI collisions should be where the real benefits of the 20mph limits lie.
+
+#### What time frame to look at?
+
+For my baseline I'll look at the collisions in 2023-2025. While some of this data will include the effects of changes in the Highland and Borders council areas, much of Scotland was yet to fully adopt 20mph limits at that time. I'll treat 2026 as a preliminary post-implementation year but wait until the 2027 data is available before drawing any solid conclusions.
+
+#### What should my denominator be?
+
+Again, this was discussed in my previous post. I want to capture the exposure of drivers to each speed limit. Ideally, I'd like to have the distance driver per km of road in each speed limit. As far as I can see, this isn't currently published and the traffic volume data seems to lag behind collisions when it comes to being published. I'll do my best to get this data, perhaps with an FOI, but in its absence I can use the volume data split by major/minor road  or simply use the total length of roads at each speed limit. Since I can't commit exactly at the moment, I'll update here when I have a clearer picture as well as in a separate post before I start the analysis.
+
+#### Which speed limits to consider?
+
+This is an important step - I want to separate the signal from the noise without throwing out too much data. I don't expect the 20mph policy to have much effect on roads over 40mph, and indeed I want to insulate my results from any changes that happen on these faster roads. Given that the vast majority of new 20mph roads will have been previously 30mph, I'll look at the number of KSI collisions on those speed limits combined. This is also the methodology used by [the Welsh Government in their collision reporting](https://www.gov.wales/police-recorded-road-collisions-and-casualties-2025-html) and the independent Office for Statistics Regulation were happy with that. More than good enough for me.
+
+I'll also look at the trend in collisions on 40mph roads as a separate group to act as a kind of control. I don't think it's likely to be a clean comparison, but worth looking for any significant increases in 40mph collisions could tell us if collisions are being displaced to elsewhere on the network.
+
+#### What effect size will I look for?
+
+With roughly 900 KSI collisions a year on roads with 20 and 30mph limits, random chance alone would move the annual count by around 7% either way, so I'll treat any reduction under 10% as indistinguishable from normal variation As a reference point for a large effect I'm using Wales, where collisions on 20 and 30mph roads fell about a fifth after its national switch. Because Scotland's roll-out is staggered and partial, I expect a smaller change than that, so anything in the 10–20% range would still be consistent with the policy working. The caveats here are that the Welsh figures include all collisions[^2] whereas I'm looking for KSIs, and any effect should stand out against the trend on 40mph roads, though with only around 100 KSI collisions a year there, that comparison will be noisy and is really a check for obvious displacement.
+
+[^2]: Some of the Welsh police forces changed how they measure collision severity during the measured period. Police Scotland have used the same system since 2019 so KSI data is more comparable.
+
+#### When will I report?
+
+I'll use the UK Dept for Transport's STATS19 final data release for each year. This seems to arrive in late July the following year. I'd expect to be able to put something on thie site within a month of each release. I've set a reminder in my calendar and I'm sure you will too.
+
+#### Do I have a prediction?
+
+Based on the experience in Wales I think a significant reduction in KSIs is likely. I'm less confident about the scale of that reduction given the differences in the nature of the road networks in Scotland and Wales but if I had to put a number on it I'd go for a 10-20% reduction. Any more than that and I'll be delighted.

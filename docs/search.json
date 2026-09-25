@@ -77,18 +77,32 @@
     "text": "Footnotes\n\n\nThe other icons visible on the map count periodic, not continuous data.↩︎\nThis year also avoids any major changes to the infrastructure layout at each site.↩︎"
   },
   {
-    "objectID": "posts/2026-09-03-millburn-background/index.html",
-    "href": "posts/2026-09-03-millburn-background/index.html",
-    "title": "Millburn Road, Inverness - The Background",
+    "objectID": "posts/2026-09-02-hello-world/index.html",
+    "href": "posts/2026-09-02-hello-world/index.html",
+    "title": "Hello, Mode Shift",
     "section": "",
-    "text": "To open this project I’m going to have a look at some infrastructure that is close to home - the segregated bike lane on Millburn Road in Inverness.\nDuring the height of the COVID-19 pandemic, cities across Scotland installed lots of temporary bike lanes as people’s travel habits changes in response to the virus. One such lane was built along a stretch of Millburn Road1 protecting cyclists on a particularly busy route into the city. The road went from looking like this in 2017:\nTo this in 2025:\nSo you can see it’s gone from a fairly inhospitable place to cycle, to one that’s fairly attractive. Then in a surprising move earlier this year Highland Council removed a section at the westernmost junction.\nOver the next few weeks I’m going to explore some of the data around this junction to investigate how useful it’s been to the city. I want to see what we can learn from the infrastructure to help better inform any plans for what comes next."
+    "text": "First post — more to come as the Scottish active travel analysis develops."
   },
   {
-    "objectID": "posts/2026-09-03-millburn-background/index.html#footnotes",
-    "href": "posts/2026-09-03-millburn-background/index.html#footnotes",
-    "title": "Millburn Road, Inverness - The Background",
+    "objectID": "posts/2026-09-04-inverness-data/index.html",
+    "href": "posts/2026-09-04-inverness-data/index.html",
+    "title": "Millburn Road - The Data",
+    "section": "",
+    "text": "To understand more about the bike lane on Millburn Road, I wanted to look at the cycling traffic levels right across the city of Inverness. The excellent news is that Cycling Scotland have an Open Data portal that tracks lots of places across Scotland. The less great news is that the data starts in 2021, so there’s no simple before/after picture to see the effect of the installation of new bike lanes during the COVID-19 pandemic. There’s still a lot to learn from what is there though!\nMillburn Road has two traffic counters, one each for the Eastward and Westward sections of the road. The point where the counters appear on the map is almost exactly where the section of bike lane has been removed making it a good place to measure bike traffic:\n\n\n\nImage taken from Cycling Scotland Open Data portal (usmart.io)\n\n\nBy grabbing the data from both the Eastward and Westward counters it’s pretty easy to see which side of the road has a bike lane:\n\n\n\n\n\n\n\n\nFigure 1: Average daily cycle counts on Millburn Road by direction, 2022–2026\n\n\n\n\nAfter a look to see if the data is what we want (it is) we can then download the full dataset for the Highland Council area. This gives daily aggregated counts at each site of cyclists, pedestrians, motorcycles, cars, buses, and goods vehicles from March 2021 to June 2026.\nIn the next post, we’ll look at how the cycle counts compare to the other city centre sites:\n\n\n\nImage taken from Cycling Scotland Open Data portal (usmart.io)"
+  },
+  {
+    "objectID": "posts/2026-09-25-collision-stats-preregister/index.html",
+    "href": "posts/2026-09-25-collision-stats-preregister/index.html",
+    "title": "Pre-registration",
+    "section": "",
+    "text": "I was recently listening to the excellent Cautionary Tales Podcast where the host, Tim Harford1 is discussing the importance of constraints on creativity with the author David Epstein. In it, David refers to the replication crisis that developed in the late 20th and early 21st century, where many wild findings would crop up in the news - largely from psychological or medical studies. Stuff like ‘you’re more likely to eat excessively from a blue bowl than a red bowl’ or the myriad claims of almost every foodstuff both causing and preventing cancer. Other researchers would try to replicate the studies and in many cases weren’t able to casting doubt as to whether the effects are real. After a while the realisation hit that the issue was that the researchers were pressurised to publish something so if their experiments yielded a null result, they’d simply interrogate the data they’d collected to find any correlations significant enough to be accepted by a journal. A good way to find a lot of false positives!\nThe solution (which is still evolving in many fields) has been for funding bodies and journals to require researchers to register their proposed methods and hypotheses in advance. This places a crucial constraint on the researchers - a methodological discipline that prevents torturing the data for answers that aren’t real. I don’t doubt there are still problems in those fields, but on all accounts I’ve seen it’s been a good move in the right direction.\nWhat’s this got to do with active travel stats? It’s given me an idea to build on the data I looked at related to 20mph zones in Scotland and road collisions, where I found that the collision data isn’t available yet to assess the effectiveness of the new speed limits. One day it will be, so now is a good time to say what I plan to look for in the data when it arrives. I’m not 100% sure what data I’ll have access to but I’ll do my best to provide myself with a framework to be accountable to."
+  },
+  {
+    "objectID": "posts/2026-09-25-collision-stats-preregister/index.html#footnotes",
+    "href": "posts/2026-09-25-collision-stats-preregister/index.html#footnotes",
+    "title": "Pre-registration",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nIt was shortened after a couple of years, more detail on that in a later post.↩︎"
+    "text": "Footnotes\n\n\nAlso the host of BBC’s More or Less. If you’ve read any of this blog it will come as no surprise to you that I am a Loyal Listener.↩︎\nSome of the Welsh police forces changed how they measure collision severity during the measured period. Police Scotland have used the same system since 2019 so KSI data is more comparable.↩︎"
   },
   {
     "objectID": "posts/2026-09-10-courier-20mph-article/index.html",
@@ -112,24 +126,24 @@
     "text": "Footnotes\n\n\nMy own pull of the same STATS19 data gives 522 collisions in 2021 and 482 in 2023, not 515 and 488 as quoted here. STATS19 records are periodically revised as late reports and corrections come in, so this is most likely a difference in when each of us pulled the data, rather than an error on either side.↩︎"
   },
   {
-    "objectID": "posts/2026-09-04-inverness-data/index.html",
-    "href": "posts/2026-09-04-inverness-data/index.html",
-    "title": "Millburn Road - The Data",
+    "objectID": "posts/2026-09-03-millburn-background/index.html",
+    "href": "posts/2026-09-03-millburn-background/index.html",
+    "title": "Millburn Road, Inverness - The Background",
     "section": "",
-    "text": "To understand more about the bike lane on Millburn Road, I wanted to look at the cycling traffic levels right across the city of Inverness. The excellent news is that Cycling Scotland have an Open Data portal that tracks lots of places across Scotland. The less great news is that the data starts in 2021, so there’s no simple before/after picture to see the effect of the installation of new bike lanes during the COVID-19 pandemic. There’s still a lot to learn from what is there though!\nMillburn Road has two traffic counters, one each for the Eastward and Westward sections of the road. The point where the counters appear on the map is almost exactly where the section of bike lane has been removed making it a good place to measure bike traffic:\n\n\n\nImage taken from Cycling Scotland Open Data portal (usmart.io)\n\n\nBy grabbing the data from both the Eastward and Westward counters it’s pretty easy to see which side of the road has a bike lane:\n\n\n\n\n\n\n\n\nFigure 1: Average daily cycle counts on Millburn Road by direction, 2022–2026\n\n\n\n\nAfter a look to see if the data is what we want (it is) we can then download the full dataset for the Highland Council area. This gives daily aggregated counts at each site of cyclists, pedestrians, motorcycles, cars, buses, and goods vehicles from March 2021 to June 2026.\nIn the next post, we’ll look at how the cycle counts compare to the other city centre sites:\n\n\n\nImage taken from Cycling Scotland Open Data portal (usmart.io)"
+    "text": "To open this project I’m going to have a look at some infrastructure that is close to home - the segregated bike lane on Millburn Road in Inverness.\nDuring the height of the COVID-19 pandemic, cities across Scotland installed lots of temporary bike lanes as people’s travel habits changes in response to the virus. One such lane was built along a stretch of Millburn Road1 protecting cyclists on a particularly busy route into the city. The road went from looking like this in 2017:\nTo this in 2025:\nSo you can see it’s gone from a fairly inhospitable place to cycle, to one that’s fairly attractive. Then in a surprising move earlier this year Highland Council removed a section at the westernmost junction.\nOver the next few weeks I’m going to explore some of the data around this junction to investigate how useful it’s been to the city. I want to see what we can learn from the infrastructure to help better inform any plans for what comes next."
   },
   {
-    "objectID": "posts/2026-09-02-hello-world/index.html",
-    "href": "posts/2026-09-02-hello-world/index.html",
-    "title": "Hello, Mode Shift",
-    "section": "",
-    "text": "First post — more to come as the Scottish active travel analysis develops."
+    "objectID": "posts/2026-09-03-millburn-background/index.html#footnotes",
+    "href": "posts/2026-09-03-millburn-background/index.html#footnotes",
+    "title": "Millburn Road, Inverness - The Background",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIt was shortened after a couple of years, more detail on that in a later post.↩︎"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "The Mode Shift",
     "section": "",
-    "text": "Data-driven analysis of active travel in Scotland — cycling volumes, mode share, and the infrastructure behind them.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMillburn Road - Cycling Volume Analysis\n\n\n\ninfrastructure\n\ncase-study\n\ndata\n\nMillburn-Rd\n\n\n\n\n\n\n\n\n\nSep 12, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nInverness Courier - Bad 20mph Stats\n\n\n\nroad-safety\n\ncase-study\n\ndata\n\ndata-literacy\n\n\n\n\n\n\n\n\n\nSep 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMillburn Road - The Data\n\n\n\ninfrastructure\n\ncase-study\n\ndata\n\n\n\n\n\n\n\n\n\nSep 4, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMillburn Road, Inverness - The Background\n\n\n\ninfrastructure\n\ncase-study\n\n\n\n\n\n\n\n\n\nSep 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nHello, Mode Shift\n\n\n\nmeta\n\n\n\n\n\n\n\n\n\nSep 2, 2026\n\n\n\n\n\nNo matching items"
+    "text": "Data-driven analysis of active travel in Scotland — cycling volumes, mode share, and the infrastructure behind them.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPre-registration\n\n\n\n20mph\n\nroad safety\n\nmethodology\n\npre-registration\n\n\n\n\n\n\n\n\n\nSep 25, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMillburn Road - Cycling Volume Analysis\n\n\n\ninfrastructure\n\ncase-study\n\ndata\n\nMillburn-Rd\n\n\n\n\n\n\n\n\n\nSep 12, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nInverness Courier - Bad 20mph Stats\n\n\n\nroad-safety\n\ncase-study\n\ndata\n\ndata-literacy\n\n\n\n\n\n\n\n\n\nSep 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMillburn Road - The Data\n\n\n\ninfrastructure\n\ncase-study\n\ndata\n\n\n\n\n\n\n\n\n\nSep 4, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMillburn Road, Inverness - The Background\n\n\n\ninfrastructure\n\ncase-study\n\n\n\n\n\n\n\n\n\nSep 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nHello, Mode Shift\n\n\n\nmeta\n\n\n\n\n\n\n\n\n\nSep 2, 2026\n\n\n\n\n\nNo matching items"
   }
 ]
